@@ -9,7 +9,7 @@ the sum of all the numbers between them. The lowest number will not always come 
 function sumAll(arr) {
   let max = Math.max(...arr);
   let min = Math.min(...arr);
-  let result = [];
+  let result = 0;
 
   for(let i = min; i <= max; i++) {
     result += i;
@@ -17,4 +17,4 @@ function sumAll(arr) {
   return result;
 }
 
-console.log(sumAll(1,4));
+console.log(sumAll([1,4]));
