@@ -30,3 +30,20 @@ function diffArray(arr1, arr2) {
 }
 
 // console.log(diffArray([1,2,3,4], [2,4,6,8]));
+
+// Seek & Destroy
+
+/* You will be provided with an initial array (the first argument in the
+destroyer function), followed by one or more arguments. Remove all
+elements from the initial array that are of the same value as these
+arguments. */
+
+
+function destroyer(arr) {
+  let args = Array.from(arguments).slice(1);
+  return arr.filter((val) => {
+    return !args.includes(val);
+  });
+}
+
+// console.log(destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan"));
