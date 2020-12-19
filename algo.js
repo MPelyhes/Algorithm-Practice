@@ -47,3 +47,36 @@ function destroyer(arr) {
 }
 
 // console.log(destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan"));
+
+
+// Wherefore art thou
+
+// Make a function that looks through an array of objects (first argument) and returns an array of all objects that have matching name and value pairs (second argument). Each name and value pair of the source object has to be present in the object from the collection if it is to be included in the returned array.
+
+// function whatIsInAName(collection, source) {
+//   var arr = [];
+//   // Only change code below this line
+//   // for(let i = 0; i < collection.length; i++) {
+//   //   if(collection[i].hasOwnProperty(source)) {
+//   //     arr.push(collection[i])
+//   //   }
+//   // }
+//   var srcKeys = Object.keys(source);
+//   var srcVals = Object.values(source);
+//   // Only change code above this line
+//   return srcKeys.concat(srcVals);
+// }
+
+// console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
+
+// Spinal Tap Case  
+
+// Convert a strring to spinal case. Spinal case ia all lowercase words joined by dashes
+
+function spinalCase(str) {
+  return str.toLowerCase().split(' ').join('-');
+  // Need to add regexs to account for white spaces and underscores
+}
+
+console.log(spinalCase("This is a sentence to test spinal case"));
+
