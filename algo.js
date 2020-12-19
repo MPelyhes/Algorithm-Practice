@@ -74,8 +74,11 @@ function destroyer(arr) {
 // Convert a strring to spinal case. Spinal case ia all lowercase words joined by dashes
 
 function spinalCase(str) {
-  return str.toLowerCase().split(' ').join('-');
-  // Need to add regexs to account for white spaces and underscores
+  //Split the string at the following conditions: whitespace is encountered, underscore is encoutered, or is followed by an uppercase letter. Join using hyphen. Lowercase the resulting string.
+
+  return str.split(/\s|_|(?=[A-Z])/).join('-').toLowerCase();
+
+ 
 }
 
 console.log(spinalCase("This is a sentence to test spinal case"));
