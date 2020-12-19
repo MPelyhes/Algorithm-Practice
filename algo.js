@@ -76,19 +76,27 @@ function whatIsInAName(collection, source) {
   value doesn't match the value in source. We return false if the if
   statement is correct, otherwise, we return true.*/
 
-console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
+// console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
 
 // Spinal Tap Case  
 
-// Convert a strring to spinal case. Spinal case ia all lowercase words joined by dashes
+// Convert a string to spinal case. Spinal case is all lowercase words joined by dashes
 
 function spinalCase(str) {
   //Split the string at the following conditions: whitespace is encountered, underscore is encoutered, or is followed by an uppercase letter. Join using hyphen. Lowercase the resulting string.
 
-  return str.split(/\s|_|(?=[A-Z])/).join('-').toLowerCase();
-
- 
+  return str.split(/\s|_|(?=[A-Z])/).join('-').toLowerCase(); 
 }
 
 // console.log(spinalCase("This is a sentence to test spinal case"));
 
+// Pig Latin
+
+/*Pig Latin is a way of altering English Words. The rules are as follows:
+- If a word begins with a consonant, take the first consonant or consonant cluster, move it to the end of the word, and add "ay" to it.
+- If a word begins with a vowel, just add "way" at the end.
+Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase. */
+
+function translatePigLatin(str) {
+  
+}
