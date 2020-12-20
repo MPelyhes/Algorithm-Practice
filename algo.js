@@ -193,9 +193,14 @@ function pairElement(str) {
         arr.push(["C", "G"]);
         break
     }
-    // return arr;
-  }
   return arr;
 }
+}
 
-console.log(pairElement("ATCGA"));
+/*We turn the str into an array and store it in a new variable(strArray). Then we create an empty array variable (arr) to be modified and
+returned. We use a for loop to loop through each index of strArray.
+Using a switch statement, we push the base pair array that corresponds
+to each case. We return arr at the end, which now holds all the base 
+pairs for the initial str. */
+
+// console.log(pairElement("ATCGA"));
