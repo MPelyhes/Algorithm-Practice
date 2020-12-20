@@ -98,5 +98,11 @@ function spinalCase(str) {
 Translate the provided string to Pig Latin. Input strings are guaranteed to be English words in all lowercase. */
 
 function translatePigLatin(str) {
-  
+  let vowelRegex = /^[aeiou]/;
+
+  if(vowelRegex.test(str)){
+    return str.concat("way")
+  }
 }
+
+console.log(translatePigLatin("art"));
