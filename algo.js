@@ -99,10 +99,26 @@ Translate the provided string to Pig Latin. Input strings are guaranteed to be E
 
 function translatePigLatin(str) {
   let vowelRegex = /^[aeiou]/;
+  let conRegex = /[aeiou]/;
+  let index = str.search(conRegex);
+  let conStart = str.substring(0,index);
+  let vowelEnd = str.substring(index);
 
   if(vowelRegex.test(str)){
     return str.concat("way")
+  } else {
+    return vowelEnd + conStart + "ay";
   }
 }
 
-console.log(translatePigLatin("art"));
+/* First, we create regexs to identify strings that start with a vowel,
+ and to find the first vowel in a string. Then we create a variable 
+ (index) that will store the index of a strings first vowel. Using the 
+ substring method, we extract the consonants at the start of a string 
+ and store it in a new variable (conStart). Similarly, we create a 
+ variable to store the first vowel and all subsequent characters. We 
+ then run the str through an if/else statement. If the str starts with a 
+ vowel, we return the string and concat "way". Else, we take the
+ vowelEnd characters and concat conStart and "ay". */
+
+console.log(translatePigLatin("mythical"));
