@@ -241,4 +241,25 @@ If the element doesn’t already exist in finalArr, we add it.
 Return finalArr.
 */
 
-console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+// console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+
+// Convert HTML Entities
+
+/*Convert the characters &, <, >, " (double quote), and ' (apostrophe),
+in a string to their corresponding HTML entities.*/
+
+function convertHTML(str) {
+  for(let i = 0; i < str.length; i++){
+    switch(str.charAt(i)) {
+      case "&":
+        str.replace("&", "&amp");
+        break;
+      case "<":
+        str.replace("<", "&lt;");
+        break;
+    }
+  }
+  return str;
+}
+
+convertHTML("Dolce & Gabbana");
