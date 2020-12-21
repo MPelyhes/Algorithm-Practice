@@ -204,3 +204,41 @@ to each case. We return arr at the end, which now holds all the base
 pairs for the initial str. */
 
 // console.log(pairElement("ATCGA"));
+
+// Sorted Union
+
+/* Write a function that takes two or more arrays and returns a new
+array of unique values in the order of the original provided arrays.
+
+In other words, all values present from all arrays should be included in
+their original order, but with no duplicates in the final array.
+
+The unique numbers should be sorted by their original order, but the
+final array should not be sorted in numerical order.
+*/
+
+function uniteUnique(arr) {
+
+ let finalArr = [];
+
+ for(let i = 0; i < arguments.length; i++) {
+  let arrArgs = arguments[i];
+  
+  for(let j = 0; j < arrArgs.length; j++){
+    let indexVal = arrArgs[j];
+
+    if(finalArr.indexOf(indexVal) < 0) {
+      finalArr.push(indexVal);
+    }
+  }
+ } 
+ return finalArr;
+}
+
+/* We create empty array finalArr to store the final result.
+Loop through the arguments object in the outer loop and store it in arrArgs.The inner loop is used to loop through individual array elements.
+If the element doesn’t already exist in finalArr, we add it.
+Return finalArr.
+*/
+
+console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
