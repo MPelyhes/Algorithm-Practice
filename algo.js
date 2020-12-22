@@ -249,17 +249,34 @@ Return finalArr.
 in a string to their corresponding HTML entities.*/
 
 function convertHTML(str) {
-  for(let i = 0; i < str.length; i++){
-    switch(str.charAt(i)) {
+  let arrayStr = str.split('');
+
+  for(let i = 0; i < arrayStr.length; i++){
+    switch(arrayStr[i]) {
       case "&":
-        str.replace("&", "&amp");
+        arrayStr.splice(i, 1, "&amp;");
         break;
       case "<":
-        str.replace("<", "&lt;");
+        arrayStr.splice(i, 1, "&lt;");
         break;
-    }
+      case ">":
+        arrayStr.splice(i, 1, "&gt;");
+        break;
+      case `"`:
+        arrayStr.splice(i, 1, "&quot;");
+        break;
+      case "'":
+        arrayStr.splice(i, 1, "&apos;");
+         break;
   }
-  return str;
+  }
+  return arrayStr.join('');
 }
 
-convertHTML("Dolce & Gabbana");
+/*Assign arrayStr to str.split(''), which creates an array containing each individual character in the passed string.
+Pass each character in the newly created array into a switch() statement.
+Replace the HTML entities with their corresponding HTML entity string (i.e. '&' becomes '&amp;' in line 51)
+temp.join('') converts the array of characters into a string to be returned.
+*/
+
+console.log(convertHTML("Sixty > twelve"));
