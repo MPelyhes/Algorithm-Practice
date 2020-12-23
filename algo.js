@@ -350,3 +350,32 @@ number.
 Check if a number is prime and add it to the value of sum.
 Return the value of sum once the loop exits.*/
 console.log(sumPrimes(10));
+
+// Drop It
+
+/*Given the array arr, iterate through and remove each
+element starting from the first element (the 0 index)
+until the function func returns true when the iterated 
+element is passed through it.
+
+Then return the rest of the array once the condition is satisfied, otherwise, arr should be returned as an empty array.
+*/
+
+function dropElements(arr, func) {
+let times = arr.length;
+
+ for(let i = 0; i < times; i++) {
+   if(func(arr[0])) {
+     break;
+    } else {
+      arr.shift();
+    }
+}
+return arr;
+}
+/*Create a for loop to check each element.
+Then check for the function given if true then stop, otherwise remove
+that element.
+return the array.*/
+
+console.log(dropElements([1, 2, 3], function(n) {return n > 2 }));
