@@ -425,4 +425,23 @@ function fearNotLetter(str) {
 
 /* We begin by looping over the string. We check if the difference in char codes between adjacent characters in the string is more than 1 (check ASCII table). We return the missing character (+1 from where the gap was detected) */
 
-console.log(fearNotLetter("abce"));
+// console.log(fearNotLetter("abce"));
+
+// Everything Be True
+
+/*Check if the predicate (second argument) is truthy on all elements of 
+a collection (first argument). In other words, you are given an array
+collection of objects. The predicate pre will be an object property and
+you need to return true if its value is truthy. Otherwise, return false.*/
+
+function truthCheck(collection, pre) {
+  for(let i = 0; i < collection.length; i++) {
+    if (!collection[i][pre]) {
+      return false;
+    }
+  }
+  return true;
+};
+
+/* We use a for loop to loop through each object in the collection argument. Using an if statement, we check each index, and if it is not true that it contains pre we return false. Otherwise, we return true.  */
+console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male", "age": 0}, {"user": "Dipsy", "sex": "male", "age": 3}, {"user": "Laa-Laa", "sex": "female", "age": 5}, {"user": "Po", "sex": "female", "age": 4}], "age"));
