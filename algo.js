@@ -303,7 +303,7 @@ function sumFibs(num) {
   return result;
 }
 
-console.log(18);
+// console.log(18);
 
 /*We create a variable to keep record of the current and previous numbers along with the result that will be returned.
 We use a while loop to make sure we do not go over the number given as parameter.
@@ -349,7 +349,7 @@ Create a loop to check all numbers lesser than or equal to the given
 number.
 Check if a number is prime and add it to the value of sum.
 Return the value of sum once the loop exits.*/
-console.log(sumPrimes(10));
+// console.log(sumPrimes(10));
 
 // Drop It
 
@@ -378,7 +378,7 @@ Then check for the function given if true then stop, otherwise remove
 that element.
 return the array.*/
 
-console.log(dropElements([1, 2, 3], function(n) {return n > 2 }));
+// console.log(dropElements([1, 2, 3], function(n) {return n > 2 }));
 
 // Alternate Drop it Algo.
 // I did not come up with it, but I like it better than mine
@@ -408,4 +408,21 @@ function steamrollArray(arr) {
   return result;
 }
 
-console.log(steamrollArray([1, [2], [3, [[4]]]]));
+// console.log(steamrollArray([1, [2], [3, [[4]]]]));
+
+// Missing Letters
+
+/* Find the missing letter in the passed letter range and return it.
+If all letters are present in the range, return undefined. */ 
+
+function fearNotLetter(str) {
+  for(let i = 1; i < str.length; i++) {
+    if( str.charCodeAt(i) - str.charCodeAt(i-1) > 1) {
+      return String.fromCharCode(str.charCodeAt(i-1) + 1);
+    }
+  }
+}
+
+/* We begin by looping over the string. We check if the difference in char codes between adjacent characters in the string is more than 1 (check ASCII table). We return the missing character (+1 from where the gap was detected) */
+
+console.log(fearNotLetter("abce"));
