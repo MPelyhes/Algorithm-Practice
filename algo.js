@@ -444,4 +444,42 @@ function truthCheck(collection, pre) {
 };
 
 /* We use a for loop to loop through each object in the collection argument. Using an if statement, we check each index, and if it is not true that it contains pre we return false. Otherwise, we return true.  */
-console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male", "age": 0}, {"user": "Dipsy", "sex": "male", "age": 3}, {"user": "Laa-Laa", "sex": "female", "age": 5}, {"user": "Po", "sex": "female", "age": 4}], "age"));
+// console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male", "age": 0}, {"user": "Dipsy", "sex": "male", "age": 3}, {"user": "Laa-Laa", "sex": "female", "age": 5}, {"user": "Po", "sex": "female", "age": 4}], "age"));
+
+// Arguments Optional 
+
+/*Create a function that sums two arguments together. If only one
+argument is provided, then return a function that expects one argument 
+and returns the sum. For example, addTogether(2, 3) should return 5, and
+addTogether(2) should return a function. Calling this returned function
+with a single argument will then return the sum:
+var sumTwoAnd = addTogether(2);
+sumTwoAnd(3) returns 5.
+If either argument isn't a valid number, return undefined. */
+
+function addTogether() {
+ var a = arguments[0];
+ var b = arguments[1];
+ function isNum(num) {
+   return Number.isInteger(num);
+ }
+
+ if(isNum(a)){
+   if(isNum(b))
+     return a + b; 
+   else if(!b) 
+   return function(b) {
+     if (isNum(b))
+     return a + b;
+   }
+ }
+}
+/* We start by creating variables to hold the first two arguments that
+are passed through. Then we create a function (isNum) that checks if an
+input is an integer. With an if statement, we check if the first
+argument is a number, using our isNum function. If it is, we check if 
+the second argument is a number. If they both are, we return the sum of 
+the first and second arguments. Else ff there is only one argument, we 
+reutrn a function.*/
+
+console.log(addTogether(2,3));
