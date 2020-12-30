@@ -580,3 +580,13 @@ const quarterOf = (month) => {
   }
   
 }
+
+/* We use if/else if statement to define the range of the months for
+each quarter of the year. We return the quarter (1-4) for the month that 
+is passed through  */
+
+// Better Solution Found on CodeWars
+
+// const quarterOf =m=> Math.ceil(m / 3);
+
+console.log(quarterOf(4));
