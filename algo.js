@@ -2,7 +2,7 @@
 
 //Sum All Numbers In a Range
 
-/* We'll pass you an array of two numbers. Return the sum of those two numbers plus 
+/* We'll pass you an array of two numbers. Return the sum of those two numbers plus
 the sum of all the numbers between them. The lowest number will not always come first.
 */
 
@@ -21,7 +21,7 @@ function sumAll(arr) {
 
 // Diff Two Arrays
 
-/* Compare two arrays and return a new array with any items found in one of the two 
+/* Compare two arrays and return a new array with any items found in one of the two
 given arrays, but not both. In other words, return the symmetric difference of the two arrays.
 */
 
@@ -78,14 +78,14 @@ function whatIsInAName(collection, source) {
 
 // console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
 
-// Spinal Tap Case  
+// Spinal Tap Case
 
 // Convert a string to spinal case. Spinal case is all lowercase words joined by dashes
 
 function spinalCase(str) {
   //Split the string at the following conditions: whitespace is encountered, underscore is encoutered, or is followed by an uppercase letter. Join using hyphen. Lowercase the resulting string.
 
-  return str.split(/\s|_|(?=[A-Z])/).join('-').toLowerCase(); 
+  return str.split(/\s|_|(?=[A-Z])/).join('-').toLowerCase();
 }
 
 // console.log(spinalCase("This is a sentence to test spinal case"));
@@ -112,12 +112,12 @@ function translatePigLatin(str) {
 }
 
 /* First, we create regexs to identify strings that start with a vowel,
- and to find the first vowel in a string. Then we create a variable 
- (index) that will store the index of a strings first vowel. Using the 
- substring method, we extract the consonants at the start of a string 
- and store it in a new variable (conStart). Similarly, we create a 
- variable to store the first vowel and all subsequent characters. We 
- then run the str through an if/else statement. If the str starts with a 
+ and to find the first vowel in a string. Then we create a variable
+ (index) that will store the index of a strings first vowel. Using the
+ substring method, we extract the consonants at the start of a string
+ and store it in a new variable (conStart). Similarly, we create a
+ variable to store the first vowel and all subsequent characters. We
+ then run the str through an if/else statement. If the str starts with a
  vowel, we return the string and concat "way". Else, we take the
  vowelEnd characters and concat conStart and "ay". */
 
@@ -133,7 +133,7 @@ function translatePigLatin(str) {
 */
 
 function myReplace(str, before, after) {
-  
+
   const replaceRegex = new RegExp(`${before}`);
   const caseRegex = /^[A-Z]/;
   let upperAfter = after.charAt(0).toUpperCase() + after.slice(1);
@@ -200,7 +200,7 @@ function pairElement(str) {
 /*We turn the str into an array and store it in a new variable(strArray). Then we create an empty array variable (arr) to be modified and
 returned. We use a for loop to loop through each index of strArray.
 Using a switch statement, we push the base pair array that corresponds
-to each case. We return arr at the end, which now holds all the base 
+to each case. We return arr at the end, which now holds all the base
 pairs for the initial str. */
 
 // console.log(pairElement("ATCGA"));
@@ -223,7 +223,7 @@ function uniteUnique(arr) {
 
  for(let i = 0; i < arguments.length; i++) {
   let arrArgs = arguments[i];
-  
+
   for(let j = 0; j < arrArgs.length; j++){
     let indexVal = arrArgs[j];
 
@@ -231,7 +231,7 @@ function uniteUnique(arr) {
       finalArr.push(indexVal);
     }
   }
- } 
+ }
  return finalArr;
 }
 
@@ -355,7 +355,7 @@ Return the value of sum once the loop exits.*/
 
 /*Given the array arr, iterate through and remove each
 element starting from the first element (the 0 index)
-until the function func returns true when the iterated 
+until the function func returns true when the iterated
 element is passed through it.
 
 Then return the rest of the array once the condition is satisfied, otherwise, arr should be returned as an empty array.
@@ -413,7 +413,7 @@ function steamrollArray(arr) {
 // Missing Letters
 
 /* Find the missing letter in the passed letter range and return it.
-If all letters are present in the range, return undefined. */ 
+If all letters are present in the range, return undefined. */
 
 function fearNotLetter(str) {
   for(let i = 1; i < str.length; i++) {
@@ -429,7 +429,7 @@ function fearNotLetter(str) {
 
 // Everything Be True
 
-/*Check if the predicate (second argument) is truthy on all elements of 
+/*Check if the predicate (second argument) is truthy on all elements of
 a collection (first argument). In other words, you are given an array
 collection of objects. The predicate pre will be an object property and
 you need to return true if its value is truthy. Otherwise, return false.*/
@@ -446,10 +446,10 @@ function truthCheck(collection, pre) {
 /* We use a for loop to loop through each object in the collection argument. Using an if statement, we check each index, and if it is not true that it contains pre we return false. Otherwise, we return true.  */
 // console.log(truthCheck([{"user": "Tinky-Winky", "sex": "male", "age": 0}, {"user": "Dipsy", "sex": "male", "age": 3}, {"user": "Laa-Laa", "sex": "female", "age": 5}, {"user": "Po", "sex": "female", "age": 4}], "age"));
 
-// Arguments Optional 
+// Arguments Optional
 
 /*Create a function that sums two arguments together. If only one
-argument is provided, then return a function that expects one argument 
+argument is provided, then return a function that expects one argument
 and returns the sum. For example, addTogether(2, 3) should return 5, and
 addTogether(2) should return a function. Calling this returned function
 with a single argument will then return the sum:
@@ -466,8 +466,8 @@ function addTogether() {
 
  if(isNum(a)){
    if(isNum(b))
-     return a + b; 
-   else if(!b) 
+     return a + b;
+   else if(!b)
    return function(b) {
      if (isNum(b))
      return a + b;
@@ -477,9 +477,9 @@ function addTogether() {
 /* We start by creating variables to hold the first two arguments that
 are passed through. Then we create a function (isNum) that checks if an
 input is an integer. With an if statement, we check if the first
-argument is a number, using our isNum function. If it is, we check if 
-the second argument is a number. If they both are, we return the sum of 
-the first and second arguments. Else ff there is only one argument, we 
+argument is a number, using our isNum function. If it is, we check if
+the second argument is a number. If they both are, we return the sum of
+the first and second arguments. Else ff there is only one argument, we
 reutrn a function.*/
 
 // console.log(addTogether(2,3));
@@ -495,7 +495,7 @@ setLastName(last)
 setFullName(firstAndLast)
 Run the tests to see the expected output for each method. The methods
 that take an argument must accept only one argument and it has to be a
-string. These methods must be the only available means of interacting 
+string. These methods must be the only available means of interacting
 with the object. */
 
 var Person = function(firstAndLast) {
@@ -535,18 +535,18 @@ var Person = function(firstAndLast) {
 //Stop gninnipS My sdroW!
 
 /*Write a function that takes in a string of one or more words, and
-returns the same string, but with all five or more letter words reversed 
-(Just like the name of this Kata). Strings passed in will consist of 
-only letters and spaces. Spaces will be included only when more than one 
+returns the same string, but with all five or more letter words reversed
+(Just like the name of this Kata). Strings passed in will consist of
+only letters and spaces. Spaces will be included only when more than one
 word is present.
 Examples: spinWords( "Hey fellow warriors" ) => returns "Hey wollef
-sroirraw" spinWords( "This is a test") => returns "This is a test" 
+sroirraw" spinWords( "This is a test") => returns "This is a test"
 spinWords( "This is another test" )=> returns "This is rehtona test" */
 
 function spinWords(str){
   let arrWords = str.split(' ');
   let result = [];
-  
+
   for(let i = 0;  i < arrWords.length;  i++){
     if(arrWords[i].length >= 5) {
       let reversed =arrWords[i].split('').reverse().join('');
@@ -564,8 +564,8 @@ return result.join(' ');
 
 /* Given a month as an integer from 1 to 12, return to which quarter of
 the year it belongs as an integer number.
-For example: month 2 (February), is part of the first quarter; month 6 
-(June), is part of the second quarter; and month 11 (November), is part of 
+For example: month 2 (February), is part of the first quarter; month 6
+(June), is part of the second quarter; and month 11 (November), is part of
 the fourth quarter. */
 
 // const quarterOf = (month) => {
@@ -578,11 +578,11 @@ the fourth quarter. */
 //   } else if (month <= 12) {
 //     return 4
 //   }
-  
+
 // }
 
 /* We use if/else if statement to define the range of the months for
-each quarter of the year. We return the quarter (1-4) for the month that 
+each quarter of the year. We return the quarter (1-4) for the month that
 is passed through  */
 
 // Better Solution Found on CodeWars
@@ -604,7 +604,7 @@ function sumStr(a,b) {
 // console.log(parseInt('8', ''));
 
 /*Create a function that converts US dollars (USD) to Chinese Yuan (CNY)
-. The input is the amount of USD as an integer, and the output should be 
+. The input is the amount of USD as an integer, and the output should be
 a string that states the amount of Yuan followed by 'Chinese Yuan'
 For Example:
   usdcny(15) // => '101.25 Chinese Yuan'
@@ -615,12 +615,34 @@ or 21) */
 
 function usdcny(usd) {
   return (usd * 6.75).toFixed(2).concat(' Chinese Yuan');
-  
+
 }
 
 /* We multiply the usd by the provided conversionrate, and use the
-toFixed() method so that the output returns to the nearest hundredth. 
+toFixed() method so that the output returns to the nearest hundredth.
 Then we concat the string. */
 
-console.log(typeof usdcny(465));
-  
+// console.log(typeof usdcny(465));
+
+// Multiples of 3 or 5
+
+/*If we list all the natural numbers below 10 that are multiples of 3 or
+5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+Finish the solution so that it returns the sum of all the multiples of 3
+or 5 below the number passed in.
+Note: If the number is a multiple of both 3 and 5, only count it once.
+Also, if a number is negative, return 0(for languages that do have them/*/
+
+  function solution(number){
+    let arr = [];
+
+    for(let i = 1; i < number; i++){
+      arr.push(i);
+    } if(number <= 0 ) {
+      arr.push(0);
+    }
+
+    return arr;
+  }
+
+  console.log(solution(-10));
