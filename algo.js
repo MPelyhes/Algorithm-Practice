@@ -635,14 +635,33 @@ Also, if a number is negative, return 0(for languages that do have them/*/
 
   function solution(number){
     let arr = [];
+    let result = [0];
 
     for(let i = 1; i < number; i++){
       arr.push(i);
-    } if(number <= 0 ) {
+    } if(number <= 0) {
       arr.push(0);
     }
 
-    return arr;
+    for(let i = 0; i < arr.length; i++){
+      if((Number.isInteger(arr[i] / 3)) || (Number.isInteger(arr[i] / 5)) ) {
+        result.push(arr[i]);
+      }
+    }
+
+     return result.reduce((accumulator, currentValue) => accumulator + currentValue);
   }
 
-  console.log(solution(-10));
+  /*We start by creating an empty array, which we will fill with all the
+  numbers betwee one and number. We also create a result array with an 
+  initial value of 0 (The initial value prevents us from returning an 
+  error if no value is passed through when the function is called). Next 
+  we use a for loop to add every number between 1 and number to the arr 
+  array. If the number is less than or equal to 0, we push 0 to arr. Then 
+  we use another for loop to check each arr value to see if it is a 
+  multiple of 3 or 5. If it is, we push it to our result array. Finally, 
+  we use the reduce method on the result array to sum all the values and 
+  return the sum. 
+   */
+
+  console.log(solution(25));
