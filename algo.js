@@ -684,4 +684,31 @@ Also, if a number is negative, return 0(for languages that do have them/*/
     return finalStr.replace(/[a-zA-Z]/, firstChar);
   }
 
-  // console.log(toCamelCase('the-Stealth-Warrior'));
+// console.log(toCamelCase('the-Stealth-Warrior'));
+
+// Friend or foe?
+
+/*Make a program that filters a list of strings and returns a list
+with only your friends name in it.
+If a name has exactly 4 letters in it, you can be sure that it has
+to be a friend of yours! Otherwise, you can be sure he's not...
+Ex: Input = ["Ryan", "Kieran", "Jason", "Yous"], Output = ["Ryan", "Yous"] */
+
+function friend(friends){
+  let friendArr = [];
+  
+  for(let i = 0; i < friends.length; i++){
+    if(friends[i].length === 4){
+      friendArr.push(friends[i]);
+    }
+  }
+  return friendArr;
+}
+
+/* We start by creating an empty array (friendArr), which will be
+used to hold the names of friends. Then we use a for loop to 
+navigate through the passed through array. Any value with the 
+exact length of 4 is pushed to the friendArr. We then return the 
+friendArr. */
+
+// console.log(friend(["Ryan", "Kieran", "Jason", "Yous"]));
