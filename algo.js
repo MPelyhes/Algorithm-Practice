@@ -664,4 +664,24 @@ Also, if a number is negative, return 0(for languages that do have them/*/
   return the sum. 
    */
 
-  console.log(solution(25));
+  // console.log(solution(25));
+
+  // Convert String to Camel Case
+  /*Complete the method/function so that it converts dash/underscore
+  delimited words into camel casing. The first word within the output 
+  should be capitalized only if the original word was capitalized 
+  (known as Upper Camel Case, also often referred to as Pascal case). */
+
+  function toCamelCase(str){
+    
+    let replaceStr = str.replace(/[^a-zA-Z0-9]+/g, ' ').toLowerCase().split(' ');
+    let firstChar = str.slice(0,1);
+    let result = replaceStr.map((val) => {
+      return val.replace(val.charAt(0), val.charAt(0).toUpperCase())
+    })
+    let finalStr = result.join('');
+
+    return finalStr.replace(/[a-zA-Z]/, firstChar);
+  }
+
+  // console.log(toCamelCase('the-Stealth-Warrior'));
