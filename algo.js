@@ -712,3 +712,23 @@ exact length of 4 is pushed to the friendArr. We then return the
 friendArr. */
 
 // console.log(friend(["Ryan", "Kieran", "Jason", "Yous"]));
+
+// Find the Odd Int
+
+/*Given an array of integers, find the one that appears an odd
+number of times.
+There will always be only one integer that appears an odd number
+of times. */
+
+function findOdd(A) {
+  // let strA = A.join('');
+  let result = [];
+  for(let i=0; i < A.length; i++){
+    if(console.count(i) % 2 != true){
+      result.push(A[i]);
+    }
+  }
+  return result;
+}
+
+console.log(findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]));
