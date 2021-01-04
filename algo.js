@@ -724,7 +724,7 @@ function findOdd(A) {
   return A.reduce((a, b) => a ^ b)
 }
 // Did not write this algorithm. Nead to read up on xor.
-console.log(findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]));
+// console.log(findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]));
 
 // Map the Debris
 
@@ -746,4 +746,32 @@ function orbitalPeriod(arr) {
   });
 }
 
-console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]));
+// console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]));
+
+
+// Writing a number guessing game
+
+let maximum = parseInt(prompt('Enter the maximum number!'));
+while(!maximum) {
+  maximum = parseInt(prompt('Enter a valid number!'));
+}
+
+const targetNum = Math.floor(Math.random() * maximum) + 1;
+
+let guess = parseInt(prompt('Enter your first guess'));
+let attempts = 1;
+
+while(parseInt(guess) !== targetNum){
+  if(guess === 'q') break;
+  attempts++;
+  if(guess > targetNum){
+    guess = prompt('Too high! Enter a new guess.')
+  } else {
+    guess = prompt('Too low! Enter a new guess.')
+  }
+}
+if(guess === 'q'){
+//   console.log('Ok, you are quitting')
+// } else {
+// console.log(`You got it! It took you ${attempts} attempts.`);
+// }
