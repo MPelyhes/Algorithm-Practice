@@ -811,4 +811,41 @@ to the power of the arrays length (which is the number of digits in the original
 this to the sum. Finally, if the final sum equals the initial value, we return true. Otherwise, 
 we return false.
 */
-console.log(narcissistic(153));
+// console.log(narcissistic(153));
+
+
+
+// IQ Test
+
+/* Bob is preparing to pass IQ test. The most frequent task in this test is to find out which 
+one of the given numbers differs from the others. Bob observed that one number usually differs 
+from the others in evenness. Help Bob — to check his answers, he needs a program that among the 
+given numbers finds one that is different in evenness, and return a position of this number.
+! Keep in mind that your task is to help Bob solve a real IQ test, which means indexes of the 
+elements start from 1 (not 0) */
+
+function iqTest(numbers){
+  let numArr = numbers.split(' ');
+  const isEven = numArr.filter(number => number % 2 === 0);
+  const isOdd = numArr.filter(number => number % 2 !== 0);
+  let diffNum = 0;
+  
+  if(isEven.length < isOdd.length){
+    diffNum = Number(isEven);
+  } else {
+    diffNum = Number(isOdd);
+  }
+
+  return numArr.indexOf(diffNum.toString()) + 1;
+}
+
+/* We start by splitting the string of numbers that is passed through, so we can work with them
+as an array. Next, we create two variables (isEven and isOdd) In isEven we filter the array into
+a new array which only contains the even numbers. We do the opposite in isOdd, creating an array
+of odd numbers. Next, we use an if/else statement to compare the length of the filtered arrays.
+Since we know there will only be one different value, we cover the value of the shorter array to
+a number which is stored in the diffNum variable. Finally, we return the index of the diffNum variable
+(converted to a string) and add 1.
+ */
+
+console.log(iqTest("2 4 7 8 10"));
