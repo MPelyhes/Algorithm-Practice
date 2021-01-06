@@ -751,27 +751,64 @@ function orbitalPeriod(arr) {
 
 // Writing a number guessing game
 
-let maximum = parseInt(prompt('Enter the maximum number!'));
-while(!maximum) {
-  maximum = parseInt(prompt('Enter a valid number!'));
-}
+// let maximum = parseInt(prompt('Enter the maximum number!'));
+// while(!maximum) {
+//   maximum = parseInt(prompt('Enter a valid number!'));
+// }
 
-const targetNum = Math.floor(Math.random() * maximum) + 1;
+// const targetNum = Math.floor(Math.random() * maximum) + 1;
 
-let guess = parseInt(prompt('Enter your first guess'));
-let attempts = 1;
+// let guess = prompt('Enter your first guess');
+// let attempts = 1;
 
-while(parseInt(guess) !== targetNum){
-  if(guess === 'q') break;
-  attempts++;
-  if(guess > targetNum){
-    guess = prompt('Too high! Enter a new guess.')
-  } else {
-    guess = prompt('Too low! Enter a new guess.')
-  }
-}
-if(guess === 'q'){
+// while(parseInt(guess) !== targetNum){
+//   if(guess === 'q') break;
+//   attempts++;
+//   if(guess > targetNum){
+//     guess = prompt('Too high! Enter a new guess.')
+//   } else {
+//     guess = prompt('Too low! Enter a new guess.')
+//   }
+
+// if(guess === 'q'){
 //   console.log('Ok, you are quitting')
 // } else {
 // console.log(`You got it! It took you ${attempts} attempts.`);
 // }
+
+// Does my number look big in this?
+/*A Narcissistic Number is a positive number which is the sum of its own
+digits, each raised to the power of the number of digits in a given base. 
+In this Kata, we will restrict ourselves to decimal (base 10).
+For example, take 153 (3 digits), which is narcisstic:
+    1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
+and 1652 (4 digits), which isn't:
+    1^4 + 6^4 + 5^4 + 2^4 = 1 + 1296 + 625 + 16 = 1938
+The Challenge:
+Your code must return true or false depending upon whether the given
+number is a Narcissistic number in base 10.
+Error checking for text strings or other invalid inputs is not required, only valid positive non-zero integers will be passed into the function. */
+
+function narcissistic(value) {
+  let strNumArr = value.toString().split('');
+  let sum = 0;
+
+  for(let num of strNumArr){
+    sum += Number(num) ** strNumArr.length;
+  }
+  
+  if(sum === value){
+    return true;
+  }
+  return false;
+}
+
+/* We start by converting the number passed in to a string, which we then split into an array.
+This allows us to seperate each digit of the number. We then instantiate a sum variable, which
+will hold the sum of our for of loop. We then use a for of statement to loop through each number
+from our array. Using the Number method, we convert each digit back to a number, which we raise
+to the power of the arrays length (which is the number of digits in the original number). We add
+this to the sum. Finally, if the final sum equals the initial value, we return true. Otherwise, 
+we return false.
+*/
+console.log(narcissistic(153));
