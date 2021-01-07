@@ -865,5 +865,13 @@ Note:
 The ball can only be seen if the height of the rebounding ball is strictly greater than the window parameter.*/
 
 function bouncingBall(h,  bounce,  window) {
+  let counter = 0;
+  let bounceHeight
   
+  while(h > window){
+     h * bounce;
+     counter++
+  }
+
+  return counter;
 }
