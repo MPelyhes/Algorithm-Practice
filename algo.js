@@ -978,4 +978,9 @@ function binaryAgent(str) {
   return wordArr.join('');
 }
 
+/* We start by splitting the string into an array. We also create two empty
+arrays which will hold values pushed from for/of loops. In the first for/of
+loop, we convert the binary value into a decimal value using parseInt. We
+then take the array of decimals and convert them to a string from the charCode
+at that decimal value. We then join and return the array of characters */
 console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"));
