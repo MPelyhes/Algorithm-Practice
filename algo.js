@@ -941,3 +941,41 @@ function smallestCommons(arr) {
 }
 
 // console.log(smallestComm([1,5]));
+
+// Steamroller
+// Flatten a nested array. You must account for varying levels of nesting.
+//Your solution should not use the Array.prototype.flat() or Array.prototype.flatMap() methods.
+
+function steamrollArray(arr) {
+  function flatDeep(arr, d = 1) {
+    return d > 0 ? arr.reduce((acc, val) => acc.concat(Array.isArray(val) ? flatDeep(val, d - 1) 
+    : val), [])
+    : arr.slice();
+ };
+  
+  return flatDeep(arr, Infinity);
+}
+
+/* I did not write this algorithm! It was taken from MDN's page on flat() 
+method. Saving it here to come back to reference.*/
+
+console.log(steamrollArray([1, [2], [3, [[4]]]]));
+
+// Binary Agents
+//Return an English translated sentence of the passed binary string. The binary string will be space separated.
+
+function binaryAgent(str) {
+  let binaryArr = str.split(' ');
+  let decimalArr = [];
+  let wordArr = [];
+
+  for(let digit of binaryArr){
+    decimalArr.push(parseInt(digit, 2))
+  }
+  for(let decimal of decimalArr){
+    wordArr.push(String.fromCharCode(decimal))
+  }
+  return wordArr.join('');
+}
+
+console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"));
