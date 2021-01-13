@@ -886,16 +886,58 @@ arrayDiff([1,2,2,2,3],[2]) == [1,3] */
 
 function arrayDiff(a, b) {
   let result = [];
-
   for(let i = 0; i < a.length; i++){
       if(!b.includes(a[i])){
         result.push(a[i])
       } 
   }
-
   return result;
 }
 
-console.log(arrayDiff([], [4,5]));
-console.log(arrayDiff([3,4], [3]));
-console.log(arrayDiff([1,8,2], []));
+// console.log(arrayDiff([], [4,5]));
+// console.log(arrayDiff([3,4], [3]));
+// console.log(arrayDiff([1,8,2], []));
+
+// Smallest common multiple
+
+/* Find the smallest common multiple of the provided
+parameters that can be evenly divided by both, as well 
+as by all sequential numbers in the range between these 
+parameters.
+The range will be an array of two numbers that will not 
+necessarily be in numerical order.
+For example, if given 1 and 3, find the smallest common 
+multiple of both 1 and 3 that is also evenly divisible 
+by all numbers between 1 and 3. The answer here would 
+be 6. */
+
+function smallestCommons(arr) {
+  arr.sort(function(a, b) {
+    return b - a;
+  });
+
+  let rangeArr =[];
+
+  for(let i = arr[0]; i >= arr[1]; i--){
+    rangeArr.push(i);
+  }
+
+  let quot = 0;
+  let loop = 1;
+  let i;
+
+  do {
+    quot = rangeArr[0] * loop * rangeArr[1];
+    for(i = 2; i < rangeArr.length; i++){
+      if(quot % rangeArr[i] !==0){
+        break;
+      } 
+    }
+
+    loop++;
+ } while(i !== rangeArr.length);
+
+ return quot;
+}
+
+// console.log(smallestComm([1,5]));
