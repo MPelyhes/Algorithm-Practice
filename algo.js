@@ -959,7 +959,7 @@ function steamrollArray(arr) {
 /* I did not write this algorithm! It was taken from MDN's page on flat() 
 method. Saving it here to come back to reference.*/
 
-console.log(steamrollArray([1, [2], [3, [[4]]]]));
+// console.log(steamrollArray([1, [2], [3, [[4]]]]));
 
 // Binary Agents
 //Return an English translated sentence of the passed binary string. The binary string will be space separated.
@@ -983,4 +983,28 @@ arrays which will hold values pushed from for/of loops. In the first for/of
 loop, we convert the binary value into a decimal value using parseInt. We
 then take the array of decimals and convert them to a string from the charCode
 at that decimal value. We then join and return the array of characters */
-console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"));
+
+// console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"));
+
+// Digital root is the recursive sum of all the digits in a number.
+
+// Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
+
+function digital_root(n) {
+  let num = n;
+
+  if(num < 10){
+    return num
+  } else {
+    let numArr = [];
+    let numString = num.toString().split('');
+
+    for(number of numString){
+      numArr.push(Number(number));
+    }
+     num = numArr.reduce(( accumulator, currentValue ) => accumulator + currentValue, 0)
+     return digital_root(num)
+  }
+}
+
+// console.log(digital_root(456))
