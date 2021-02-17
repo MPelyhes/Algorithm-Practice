@@ -1008,3 +1008,13 @@ function digital_root(n) {
 }
 
 // console.log(digital_root(456))
+
+function stockList(listOfArt, listOfCat){
+  if (!listOfArt.length || !listOfCat.length) return ''
+  return listOfCat.map(w => {
+    const s = listOfArt.reduce((a, b) => a + (b.charAt(0) === w ? +b.split(' ')[1] : 0), 0)
+    return `(${w} : ${s})`
+  }).join(' - ')
+}
+
+// console.log(stockList(["ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"], ["A", "B"]))
