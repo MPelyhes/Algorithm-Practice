@@ -1018,3 +1018,28 @@ function stockList(listOfArt, listOfCat){
 }
 
 // console.log(stockList(["ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"], ["A", "B"]))
+
+//Detect Pangram
+
+// A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
+
+// Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
+
+function isPangram(string){
+  const alphabet =["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+  let result =0;
+
+  for(let letter of alphabet){
+    if(string.indexOf(letter) >= 0 || string.indexOf(letter.toUpperCase()) >= 0 ){
+      result++
+    } 
+  }
+
+  if(result === 26){
+    return true;
+  } else{
+    return false;
+  }
+}
+
+// console.log(isPangram("Cwm fjord bank glyphs vext quiz"))
