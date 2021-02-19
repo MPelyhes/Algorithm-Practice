@@ -1064,3 +1064,28 @@ function songDecoder(song){
 }
 
 // console.log(songDecoder("AWUBWUBWUBBWUBWUBWUBC"));
+
+// Perimeter of squares in a rectangle
+
+// The drawing shows 6 squares the sides of which have a length of 1, 1, 2, 3, 5, 8. 
+// It's easy to see that the sum of the perimeters of these squares is : 4 * (1 + 1 + 2 + 3 + 5 + 8) = 4 * 20 = 80
+// Could you give the sum of the perimeters of all the squares in a rectangle when there are n + 1 squares disposed in the same manner as in the drawing:
+// 
+
+function perimeter(n) {
+  if(n === 0){
+    return 4;
+  } else {
+  let totalSquares = n + 1;
+  let counter = 0;
+  let perimeters =[0, 1];
+  do {
+    counter++;
+    perimeters.push(perimeters[counter] + perimeters[counter -1]);
+  } while (perimeters.length  <= totalSquares);
+
+  return perimeters.reduce(( accumulator, currentValue ) => accumulator + currentValue, 0) * 4;
+}
+}
+
+// console.log(perimeter(7));
