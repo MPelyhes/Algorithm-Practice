@@ -1119,4 +1119,24 @@ snail = function(array) {
  return storeArr;
 }
 
-console.log(snail([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
+// console.log(snail([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
+
+//Fizz Buzz Solution 
+
+const fizzBuzz = (num)=> {
+   for(let i = 1; i <= num; i++){
+    let notDivByThree = ((i/3) - Math.floor(i/3)) !== 0;
+    let notDivByFive = ((i/5) - Math.floor(i/5)) !== 0;
+    if(!notDivByThree && !notDivByFive) {
+      console.log("FizzBuzz")
+    } else if(!notDivByThree){
+      console.log("Fizz")
+    } else if(!notDivByFive){
+      console.log("Buzz")
+    } else {
+      console.log(String(i))
+    }
+  }
+}
+
+console.log(fizzBuzz(15))
