@@ -1124,19 +1124,44 @@ snail = function(array) {
 //Fizz Buzz Solution 
 
 const fizzBuzz = (num)=> {
-   for(let i = 1; i <= num; i++){
-    let notDivByThree = ((i/3) - Math.floor(i/3)) !== 0;
-    let notDivByFive = ((i/5) - Math.floor(i/5)) !== 0;
-    if(!notDivByThree && !notDivByFive) {
-      console.log("FizzBuzz")
-    } else if(!notDivByThree){
-      console.log("Fizz")
-    } else if(!notDivByFive){
-      console.log("Buzz")
-    } else {
-      console.log(String(i))
-    }
+let arr = [];
+
+  for(let i = 1; i <= num; i++){
+  let notDivByThree = ((i/3) - Math.floor(i/3)) !== 0;
+  let notDivByFive = ((i/5) - Math.floor(i/5)) !== 0;
+  if(!notDivByThree && !notDivByFive) {
+    console.log("FizzBuzz")
+  } else if(!notDivByThree){
+    console.log("Fizz")
+  } else if(!notDivByFive){
+    console.log("Buzz")
+  } else {
+    console.log(String(i))
   }
 }
 
-console.log(fizzBuzz(15))
+
+}
+
+// console.log(fizzBuzz(1))
+
+
+const fizzBuzzTwo = (num)=> {
+  let arr = [];
+
+  for(let i = 1; i <= num; i++){
+  let notDivByThree = ((i/3) - Math.floor(i/3)) !== 0;
+  let notDivByFive = ((i/5) - Math.floor(i/5)) !== 0;
+  if(!notDivByThree && !notDivByFive) {
+    arr.push("FizzBuzz")
+  } else if(!notDivByThree){
+    arr.push("Fizz")
+  } else if(!notDivByFive){
+    arr.push("Buzz")
+  } else {
+    arr.push(String(i))
+  }
+}
+return arr;
+}
+console.log(fizzBuzzTwo(15))
