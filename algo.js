@@ -1164,4 +1164,56 @@ const fizzBuzzTwo = (num)=> {
 }
 return arr;
 }
-console.log(fizzBuzzTwo(15))
+// console.log(fizzBuzzTwo(15))
+
+// Streetfighter Character Selection
+// Input
+// the list of game characters in a 2x6 grid;
+// the initial position of the selection cursor (top-left is (0,0));
+// a list of moves of the selection cursor (which are up, down, left, right);
+// Output
+// the list of characters who have been hovered by the selection cursor after all the moves (ordered and with repetition, all the ones after a move, wether successful or not, see tests);
+// Rules
+// Selection cursor is circular horizontally but not vertically!
+// As you might remember from the game, the selection cursor rotates horizontally but not vertically; that means that if I'm in the leftmost and I try to go left again I'll get to the rightmost (examples: from Ryu to Vega, from Ken to M.Bison) and vice versa from rightmost to leftmost.
+// Instead, if I try to go further up from the upmost or further down from the downmost, I'll just stay where I am located (examples: you can't go lower than lowest row: Ken, Chun Li, Zangief, Dhalsim, Sagat and M.Bison in the above image; you can't go upper than highest row: Ryu, E.Honda, Blanka, Guile, Balrog and Vega in the above image).
+// Test
+// For this easy version the fighters grid layout and the initial position will always be the same in all tests, only the list of moves change.
+
+const streetFighterSelection = (fighters, position, moves) => {
+  let vert = 0;
+  let hor = 0;
+  let charPos = [];
+  let chars =[]
+
+  for(let i = 0; i < moves.length; i++){
+    if(moves[i] === 'up' && vert === 1){
+      vert--
+    } else if(moves[i] === 'down' && vert === 0){
+      vert++
+    } else if(moves[i] === 'left' && hor > 0){
+      hor--
+    }else if(moves[i] === 'left' && hor === 0){
+      hor = 5
+    } else if(moves[i] === 'right' && hor < 5){
+      hor++
+    } else if(moves[i] === 'right' && hor === 5){
+      hor = 0
+    }
+    charPos.push([vert, hor])
+  }
+
+  for(let i = 0; i < charPos.length; i++){
+    let zero = charPos[i][0];
+    let one = charPos[i][1]
+    
+    chars.push(fighters[zero][one])
+  }
+  
+  return chars;
+}
+
+console.log(streetFighterSelection([
+	["Ryu", "E.Honda", "Blanka", "Guile", "Balrog", "Vega"],
+	["Ken", "Chun Li", "Zangief", "Dhalsim", "Sagat", "M.Bison"]
+], [0,0], ['up', 'left', 'right', 'left', 'left']))
