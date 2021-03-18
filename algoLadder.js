@@ -92,6 +92,29 @@ const product = (arr) => {
   return arr.reduce((sum, value) => sum * value)
 }
 
-console.log(product([1, 2, 3, 4]))
+// console.log(product([1, 2, 3, 4]))
 
 //In this solution we simply call the reduce method on the given array and pass it a function that multiplies each value by the accumulator(sum)
+
+//Algo 6: Reverse Array
+//Given an array, return a new array that contains the original array’s values in reverse.
+
+const reverse = (arr) => {
+  return arr.reverse();
+}
+
+// console.log(reverse([1, 2, 3, 4, 5]));
+
+const reverseIt = (arr) => {
+  let reverseArr = [];
+  for(let num of arr){
+    reverseArr.unshift(num)
+  }
+  return reverseArr;
+}
+
+// console.log(reverseIt([1, 2, 3, 4, 5]));
+
+// In the first solution we use the array reverse function method to reverse the entire array
+//In the second solution we use unshift method to create a new array with the numbers in reverse order
+
