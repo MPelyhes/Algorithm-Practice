@@ -118,3 +118,28 @@ const reverseIt = (arr) => {
 // In the first solution we use the array reverse function method to reverse the entire array
 //In the second solution we use unshift method to create a new array with the numbers in reverse order
 
+// Algo 7: Skip It
+// Given an array of numbers, return a new array in which only select numbers from the original array are included, based on the following details:
+// The new array should always start with the first number from the original array. The next number that should be included depends on what the first number is. The first number dictates how many spaces to the right the computer should move to pick the next number. For example, if the first number is 2, then the next number that the computer should select would be two spaces to the right. This number gets added to the new array. If this next number happens to be a 4, then the next number after that is the one four spaces to the right. And so on and so forth until the end of the array is reached.
+
+// const skipIt = (arr) => {
+//  let result = [];
+
+//  for(let i =0; i)
+
+//  return result;
+// }
+
+// console.log(skipIt([2, 1, 3, 2, 5, 1, 2, 6, 2, 7, 1, 5, 6, 3, 2, 6, 2, 1, 2]));
+
+//Algo 8: Reverse String
+// Return the reverse of a given string.
+
+const reverseString = (str) => {
+  return str.split('').reverse().join('');
+}
+
+// console.log(reverseString('abcde'));
+
+//For this solution we use the split method to turn the given string into an array. Each character has its own index, so we can reverse the array and
+//then join it back together without spaces between the letters
