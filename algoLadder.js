@@ -44,3 +44,18 @@ const underOneHundoLoop = (arr) => {
  }
 
 //  console.log(underOneHundo([99, 101, 88, 4, 2000, 50]))
+
+// In the first solution, we filtered the givern array to create a new array that only contains numbers under 100
+// In the second solutions, we used a for/of loop to push the numbers under one hundred into a new array
+
+// Algo 3: Map Double
+//Given an array of numbers, return a new array whose values are the original array’s value doubled.
+
+const seeingDouble = (arr) => {
+  return arr.map((num) => num * 2);
+}
+
+// console.log(seeingDouble([4, 2, 5, 99, -4]));
+
+// For this solution we just have to use the map method and multiply each number by 2
+
