@@ -20,3 +20,27 @@ const arrSum = (arr) => {
 // console.log(arrSum([1, 2, 3, 4]))
 
 // The reduce sum function was fisrt solved using a reduce function and then with a for/of functions
+
+// Algo 2: Less than 100
+// Given an array of numbers, return a new array that contains all numbers from the original array 
+//that are less than 100.
+
+const underOneHundo = (arr) => {
+  return arr.filter(num => num < 100)
+}
+
+// console.log(underOneHundo([99, 101, 88, 4, 2000, 50]))
+
+const underOneHundoLoop = (arr) => {
+  let result = [];
+ 
+  for(let num of arr){
+    if(num < 100){
+      result.push(num)
+    }
+  }
+ 
+  return result;
+ }
+
+//  console.log(underOneHundo([99, 101, 88, 4, 2000, 50]))
