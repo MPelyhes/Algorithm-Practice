@@ -84,3 +84,14 @@ const getTheMax = (arr) => {
 
 //In the first solution we use the Math.max method and spread the give array into it to find the max
 //In the second solution we use a for loop to determine the greatest number
+
+// Algo 5: Reduce: Product
+// Given an array of numbers, return the product of all the numbers.
+
+const product = (arr) => {
+  return arr.reduce((sum, value) => sum * value)
+}
+
+console.log(product([1, 2, 3, 4]))
+
+//In this solution we simply call the reduce method on the given array and pass it a function that multiplies each value by the accumulator(sum)
