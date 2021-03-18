@@ -143,3 +143,14 @@ const reverseString = (str) => {
 
 //For this solution we use the split method to turn the given string into an array. Each character has its own index, so we can reverse the array and
 //then join it back together without spaces between the letters
+
+// Algo 9: Show me the money
+// Given a string, return true if the “$” character is contained within the string or false if it is not.
+
+const money = (str) => {
+  return str.includes("$") ? true : false;
+}
+
+// console.log(money("i hate but i love money i know i know im crazy"))
+
+// For this solution we use a ternary operator to return true if the string includes a $, using the includes method
