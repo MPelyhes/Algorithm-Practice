@@ -59,3 +59,28 @@ const seeingDouble = (arr) => {
 
 // For this solution we just have to use the map method and multiply each number by 2
 
+//Algo 4: Array Max
+// Return the greatest value from an array of numbers.
+
+const toTheMax = (arr) => {
+  return Math.max(...arr);
+}
+
+// console.log(toTheMax([5, 17, -4, 20, 12]))
+
+const getTheMax = (arr) => {
+  let greatestNum = arr[0];
+
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] > greatestNum){
+      greatestNum = arr[i]
+    }
+  }
+
+  return greatestNum;
+}
+
+// console.log(getTheMax([5, 17, -4, 20, 12]))
+
+//In the first solution we use the Math.max method and spread the give array into it to find the max
+//In the second solution we use a for loop to determine the greatest number
