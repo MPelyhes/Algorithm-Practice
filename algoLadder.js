@@ -339,3 +339,30 @@ const leapYear = (num) => {
 
 //For this solution we start by checking for the one instance in which a number divisible by four is not a leap year
 //Next we check if the number is divisible by four. If it is, then we have ourselves a leap year! Otherwise, we return false.
+
+//Algo 18: Fibonacci Numbers
+// Write a function that gives the Nth number of the Fibonacci Sequence. 
+// The Fibonacci sequence begins with 0 and 1, and every number thereafter is the sum of the previous two numbers. 
+// So the sequence goes like this:
+// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, and so on until infinity...
+
+const fibonacci = (num) => {
+  if(num === 1) return 0;
+  if(num === 2) return 1;
+
+  let arr = [0, 1];
+  let counter = 1
+  
+  for(let i = 2; i <= num; i++){
+    counter = (arr[i-1] + arr[i-2]);
+    arr.push(counter);
+  }
+
+  return counter;
+}
+
+// console.log(fibonacci(100))
+//In this solution, we start by returning the first two numbers of the fibonacci sequence, if they are given as an argumetn.
+//Next, we create an array which holds the first two numbers of the sequence. Then we create a counter, which begins ar the secong
+//number of the sequence. Then we use a for loop to add the two previous fibonacci numbers together, until we have the correlating
+//fibonacci number for the argument passed in. We tracke the fibonacci numbers by adding them to our array.
