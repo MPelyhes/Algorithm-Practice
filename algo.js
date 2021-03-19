@@ -1164,7 +1164,7 @@ const fizzBuzzTwo = (num)=> {
 }
 return arr;
 }
-// console.log(fizzBuzzTwo(15))
+console.log(fizzBuzzTwo(100))
 
 // Streetfighter Character Selection
 // Input
@@ -1213,7 +1213,7 @@ const streetFighterSelection = (fighters, position, moves) => {
   return chars;
 }
 
-console.log(streetFighterSelection([
-	["Ryu", "E.Honda", "Blanka", "Guile", "Balrog", "Vega"],
-	["Ken", "Chun Li", "Zangief", "Dhalsim", "Sagat", "M.Bison"]
-], [0,0], ['up', 'left', 'right', 'left', 'left']))
+// console.log(streetFighterSelection([
+// 	["Ryu", "E.Honda", "Blanka", "Guile", "Balrog", "Vega"],
+// 	["Ken", "Chun Li", "Zangief", "Dhalsim", "Sagat", "M.Bison"]
+// ], [0,0], ['up', 'left', 'right', 'left', 'left']))

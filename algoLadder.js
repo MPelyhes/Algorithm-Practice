@@ -284,9 +284,35 @@ const primes = (num) => {
  return true;
 } 
 
-console.log(primes(55));
+// console.log(primes(55));
 
 //For this solution we start by checking if a number is less than or equal to 1, which would mean it is not prime. 
 //Next we check if the number is equal to 2, since that is the only even prime number.
 // Then we use a for loop to check every number between two and the given number. If the given number divided by i is
 // zero, then we know it is not a prime number. If it makes it all the way through the for loop we know it is a prime number
+
+// Algo 16: FizzBuzz!
+//Write a function that prints out every number from 1 to N, with the following exceptions:
+// If the number is divisible by 3, print out "FIZZ".
+// If the number is divisible by 5, print out "BUZZ".
+// If the number is divisible by both 3 and 5, print out "FIZZBUZZ".
+
+const fizzBuzz = (num) => {
+  let result = [];
+
+  for(let i = 1; i <= num; i++){
+    if(Number.isInteger(i/3) && Number.isInteger(i/5)){
+      result.push("FIZZBUZZ");
+    } else if(Number.isInteger(i/3)){
+      result.push("FIZZ")
+    } else if(Number.isInteger(i/5)){
+      result.push("BUZZ")
+    } else{
+      result.push(i);
+    }
+  }
+
+  return result;
+}
+
+console.log(fizzBuzz(100));
