@@ -192,3 +192,28 @@ const duplicate = (str) => {
 //Next, we use a for loop to loop over every character of the array until we find a duplicate. We know a character has a duplicate
 //next to it if it is identical to the character at the index which follows it
 
+//Algo 12: Reverse Words
+// Given a string of words, return a new string that contains the words in reverse order.
+
+const reverseWords = (str) => {
+  return str.split(' ').reverse().join(' ')
+}
+
+// console.log(reverseWords('popcorn is so cool isn’t it yeah i thought so'))
+
+const reversedWords = (str) => {
+  let strSplit = str.split(' ');
+  let result = [];
+
+  for(let i = 0; i < strSplit.length; i++){
+    result.unshift(strSplit[i]);
+  }
+
+  return result.join(' ');
+}
+
+// console.log(reversedWords('popcorn is so cool isn’t it yeah i thought so'))
+
+//In the first solution we split the given string into an array, keeping the spacing between words. Then we reverse the array and join it back together.
+//In the second solution we also split the given string into an array. We then use a for loop to iterate over the array. We unshift each item into the
+//result array to reverse the original order. Finally, we return the result array after turning it into a string.
