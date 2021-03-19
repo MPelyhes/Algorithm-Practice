@@ -234,3 +234,26 @@ const palindrome = (str) => {
 // console.log(palindrome('racecars'));
 //In this solution we create a variable which holds the reversed version of the original string. 
 //We then use an if statement to compare it to the original
+
+//Algo 14: Hamming
+//Given two strings of equal length, return the number of characters that are different between the two strings.
+
+const hamming = (str1, str2) => {
+  let arr1 = str1.split('');
+  let arr2 = str2.split('');
+  let counter = 0;
+
+  for(let i = 0; i < arr1.length; i++){
+    if(arr1[i] !== arr2[i]){
+      counter++
+    }
+  }
+
+  return counter;
+}
+
+// console.log(hamming('ABCDEFG', 'ABCXEOG'));
+
+//For this solution we turn both of the give strings into arrays so that we can iterate over them.
+//We create a counter variable which will track the number of differencese. We loop over the first array
+//comparing its indices to the comparable indices of the second array. For each difference, we add one to the counter
