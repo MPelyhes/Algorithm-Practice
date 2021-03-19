@@ -122,15 +122,25 @@ const reverseIt = (arr) => {
 // Given an array of numbers, return a new array in which only select numbers from the original array are included, based on the following details:
 // The new array should always start with the first number from the original array. The next number that should be included depends on what the first number is. The first number dictates how many spaces to the right the computer should move to pick the next number. For example, if the first number is 2, then the next number that the computer should select would be two spaces to the right. This number gets added to the new array. If this next number happens to be a 4, then the next number after that is the one four spaces to the right. And so on and so forth until the end of the array is reached.
 
-// const skipIt = (arr) => {
-//  let result = [];
+const skipIt = (arr) => {
+ let result = [];
+ let counter = 0;
 
-//  for(let i =0; i)
+ for(let i = 0; i < arr.length; i++){
+   if(i === counter){
+     result.push(arr[i])
+     counter += arr[i];
+   }
+ }
 
-//  return result;
-// }
+ return result;
+}
 
 // console.log(skipIt([2, 1, 3, 2, 5, 1, 2, 6, 2, 7, 1, 5, 6, 3, 2, 6, 2, 1, 2]));
+
+//For this solution we create an empty array to hold the desired numbers. We also set a counter variable to track which numbers to return
+//We then use a for loop to iterate over the given array. If the index is equal to the counter, we add the number at that index into our
+//result array. We then add that number to the counter. If the index is not equal to the counter we do nothing.
 
 //Algo 8: Reverse String
 // Return the reverse of a given string.
@@ -257,3 +267,10 @@ const hamming = (str1, str2) => {
 //For this solution we turn both of the give strings into arrays so that we can iterate over them.
 //We create a counter variable which will track the number of differencese. We loop over the first array
 //comparing its indices to the comparable indices of the second array. For each difference, we add one to the counter
+
+//Algo 15: Primes
+//Write a function that returns whether a given number is a prime number.
+
+const primes = (num) => {
+
+}
