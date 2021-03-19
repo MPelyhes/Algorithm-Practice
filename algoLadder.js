@@ -154,3 +154,41 @@ const money = (str) => {
 // console.log(money("i hate but i love money i know i know im crazy"))
 
 // For this solution we use a ternary operator to return true if the string includes a $, using the includes method
+
+//Algo 10: Alternate Capitals
+//Given a string, return a copy of the original string that has every other character capitalized. (Capitalization should begin with the second character.)
+
+// const alternator = (str) => {
+//   let newStr = str.split('');
+//   let arr = [];
+
+//   for(let i = 1; i < newStr.length; i + 2){
+//     arr.push(newStr[i].toUpperCase())
+//   }
+
+//   return arr;
+// }
+
+// // console.log(alternator('hello, how are your porcupines today?”'));
+
+//Algo 11: First Duplicate Character 
+// Given a string, find the first occurence of two duplicate characters in a row, and return the duplicated character.
+
+const duplicate = (str) => {
+  let strArr = str.split('');
+  let noDupes = "There don't appear to be any duplicates"
+
+  for(let i = 0; i < strArr.length; i++){
+    if(strArr[i] === strArr[i+1]){
+      return strArr[i]
+    }
+  }
+
+  return noDupes;
+}
+
+// console.log(duplicate('abcdefghijklmnopqrstuvwxyz'))
+//In this solution we turn the given string into an array. Then we create a variable to be returned if there are no duplicates
+//Next, we use a for loop to loop over every character of the array until we find a duplicate. We know a character has a duplicate
+//next to it if it is identical to the character at the index which follows it
+
