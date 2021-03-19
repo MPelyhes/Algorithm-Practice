@@ -264,7 +264,7 @@ const hamming = (str1, str2) => {
 
 // console.log(hamming('ABCDEFG', 'ABCXEOG'));
 
-//For this solution we turn both of the give strings into arrays so that we can iterate over them.
+//For this solution we turn both of the given strings into arrays so that we can iterate over them.
 //We create a counter variable which will track the number of differencese. We loop over the first array
 //comparing its indices to the comparable indices of the second array. For each difference, we add one to the counter
 
@@ -272,5 +272,21 @@ const hamming = (str1, str2) => {
 //Write a function that returns whether a given number is a prime number.
 
 const primes = (num) => {
+ if(num <= 1) return false;
+ if(num === 2) return true;
 
-}
+ for(let i = 2; i < num; i++){
+   if(num % i === 0){
+     return false
+   }
+ }
+ 
+ return true;
+} 
+
+console.log(primes(55));
+
+//For this solution we start by checking if a number is less than or equal to 1, which would mean it is not prime. 
+//Next we check if the number is equal to 2, since that is the only even prime number.
+// Then we use a for loop to check every number between two and the given number. If the given number divided by i is
+// zero, then we know it is not a prime number. If it makes it all the way through the for loop we know it is a prime number
