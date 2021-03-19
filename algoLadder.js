@@ -217,3 +217,20 @@ const reversedWords = (str) => {
 //In the first solution we split the given string into an array, keeping the spacing between words. Then we reverse the array and join it back together.
 //In the second solution we also split the given string into an array. We then use a for loop to iterate over the array. We unshift each item into the
 //result array to reverse the original order. Finally, we return the result array after turning it into a string.
+
+//Algo 13: Palindrome
+//Given a string, return true if it is a palindrome, and false if it is not.
+
+const palindrome = (str) => {
+  let reversal = str.split('').reverse().join('');
+
+  if(reversal === str){
+    return true;
+  }
+
+  return false;
+}
+
+// console.log(palindrome('racecars'));
+//In this solution we create a variable which holds the reversed version of the original string. 
+//We then use an if statement to compare it to the original
