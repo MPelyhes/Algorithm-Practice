@@ -384,8 +384,37 @@ const multiples = (num) => {
   return sum;
 }
 
-// console.log(multiples(10));
+// console.log(multiples(100));
 
 //For this solution we start by creating a variable that will hold the sum of all numbers that are divisble by either 3 or 5
 //Next we use a for loop to check every number between 0 and the given number to see if it is divisible by 3 or 5
 //If it is divisble then we add it to the sum variable, which we return at the end
+
+//Collatz conjecture
+//The Collatz Conjecture or 3x+1 problem can be summarized as follows:
+// Take any positive integer n. If n is even, divide n by 2 to get n / 2. If n is odd, multiply n by 3 and add 1 to get 3n + 1. Repeat the process indefinitely. The conjecture states that no matter which number you start with, you will always reach 1 eventually.
+// Given a number n, return the number of steps required to reach 1.
+
+
+const collatzConjecture = (num) => {
+  let steps = 0;
+
+  do{
+    if(num % 2 === 0){
+      num = num / 2;
+      steps++
+    } else {
+      num = num * 3 + 1;
+      steps++
+    }
+  } while(num > 1);
+
+  return steps;
+}
+
+// console.log(collatzConjecture(100))
+
+//In this solution we start by creating a variable to keep track of the number of steps 
+//Next we run a do/while loop and if a number is even we divide it by two and add 1 to steps
+//If the number is odd we mulitply it by three and add one and increase steps.
+// We keep repeating that until the num is 1 and then we return the number of steps
