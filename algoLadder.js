@@ -362,7 +362,30 @@ const fibonacci = (num) => {
 }
 
 // console.log(fibonacci(100))
+
 //In this solution, we start by returning the first two numbers of the fibonacci sequence, if they are given as an argumetn.
 //Next, we create an array which holds the first two numbers of the sequence. Then we create a counter, which begins ar the secong
 //number of the sequence. Then we use a for loop to add the two previous fibonacci numbers together, until we have the correlating
 //fibonacci number for the argument passed in. We tracke the fibonacci numbers by adding them to our array.
+
+//Multiples of 3 & 5
+//If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+// Find the sum of all the multiples of 3 or 5 below 1000.
+
+const multiples = (num) => {
+  let sum = 0;
+
+  for(let i = 0; i < num; i++){
+    if(Number.isInteger(i/3) || Number.isInteger(i/5)){
+      sum += i
+    }
+  }
+
+  return sum;
+}
+
+// console.log(multiples(10));
+
+//For this solution we start by creating a variable that will hold the sum of all numbers that are divisble by either 3 or 5
+//Next we use a for loop to check every number between 0 and the given number to see if it is divisible by 3 or 5
+//If it is divisble then we add it to the sum variable, which we return at the end
