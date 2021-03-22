@@ -368,7 +368,7 @@ const fibonacci = (num) => {
 //number of the sequence. Then we use a for loop to add the two previous fibonacci numbers together, until we have the correlating
 //fibonacci number for the argument passed in. We tracke the fibonacci numbers by adding them to our array.
 
-//Multiples of 3 & 5
+//Algo 19: Multiples of 3 & 5
 //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 // Find the sum of all the multiples of 3 or 5 below 1000.
 
@@ -390,7 +390,7 @@ const multiples = (num) => {
 //Next we use a for loop to check every number between 0 and the given number to see if it is divisible by 3 or 5
 //If it is divisble then we add it to the sum variable, which we return at the end
 
-//Collatz conjecture
+//Algo 20: Collatz conjecture
 //The Collatz Conjecture or 3x+1 problem can be summarized as follows:
 // Take any positive integer n. If n is even, divide n by 2 to get n / 2. If n is odd, multiply n by 3 and add 1 to get 3n + 1. Repeat the process indefinitely. The conjecture states that no matter which number you start with, you will always reach 1 eventually.
 // Given a number n, return the number of steps required to reach 1.
@@ -418,3 +418,35 @@ const collatzConjecture = (num) => {
 //Next we run a do/while loop and if a number is even we divide it by two and add 1 to steps
 //If the number is odd we mulitply it by three and add one and increase steps.
 // We keep repeating that until the num is 1 and then we return the number of steps
+
+// Algo 21: Largest Palindrome Product
+// A palindromic number reads the same both ways. 
+// The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+// Find the largest palindrome made from the product of two 3-digit numbers.
+const largestPalindrome = () => {
+
+}
+
+//Algo 22: Array Mesh 1
+// Given two arrays of strings, return a new string that contains every combination 
+// of a string from the first array concatenated with a string from the second array.
+
+const arrayMesh = (arr1, arr2) => {
+  let result = [];
+
+  for(let i = 0; i < arr1.length; i++){
+    for(let j = 0; j < arr2.length; j++){
+      result.push(arr1[i] + arr2[j])
+    }
+  }
+
+  return result;
+}
+
+console.log(arrayMesh(["a", "b", "c"], ["d", "e", "f", "g"]));
+
+//In this solution we start by creating an empty array which we will use to store every
+//combination of string concatenation. Next we use a for loop to loop over each index of our 
+//first given array. Inside that for loop we create another for loop to loop over every index
+//of the second given array. In this second loop we push every combination of srtings to our result array.
+//Finally, we return the result.
