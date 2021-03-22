@@ -469,3 +469,35 @@ const arrayMeshTwo = (arr) => {
 }
 
 // console.log(arrayMeshTwo(["a", "b", "c", "d"]));
+
+//Algo 24: Largest Profuct
+//Find the largest product of any two numbers within a given array.
+
+const largestProduct = (arr) => {
+  let result = [];
+
+  for(let i = 0; i < arr.length; i++){
+    for(let j = 0; j < arr.length; j++){
+      if(i < j){
+        result.push(arr[i] * arr[j])
+      }
+    }
+  }
+
+  return result.reduce((prod, value) => {
+    if(value > prod){
+      prod = value;
+    }
+    return prod;
+  });
+}
+
+// console.log(largestProduct([5, -2, 1, -9, -7, 2, 6]));
+
+//In this solution we start by creating an array to hold all of the products.
+//Next, we create a for loop to go over each number in the array. We run another for loop
+//inside of the first loop. If the index[i] is less than the index[j] we multiply arr[i] * arr[j].
+//This prevents us from multiplying numbers by themselves, and keeps us from duplicating product values
+//in our result array. Next we use the reduce method on our result array. Our accumulator is going to
+//be our largest product, which we return at the end. Using an if statement we compare the current value to the 
+//product, and if it is greater we set the largest product equal to value.
