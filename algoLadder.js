@@ -443,10 +443,29 @@ const arrayMesh = (arr1, arr2) => {
   return result;
 }
 
-console.log(arrayMesh(["a", "b", "c"], ["d", "e", "f", "g"]));
+// console.log(arrayMesh(["a", "b", "c"], ["d", "e", "f", "g"]));
 
 //In this solution we start by creating an empty array which we will use to store every
 //combination of string concatenation. Next we use a for loop to loop over each index of our 
 //first given array. Inside that for loop we create another for loop to loop over every index
 //of the second given array. In this second loop we push every combination of srtings to our result array.
 //Finally, we return the result.
+
+//Algo 23: Array Mesh 2
+//Given ONE array of strings, return a new array that contains every combination of each string with every other string in the array.
+
+const arrayMeshTwo = (arr) => {
+  let result = [];
+
+  for(let i = 0; i < arr.length; i++){
+    for(let j = 0; j < arr.length; j++){
+      if(arr[i] !== arr[j]){
+        result.push(arr[i] + arr[j])
+      }
+    }
+  }
+
+  return result;
+}
+
+// console.log(arrayMeshTwo(["a", "b", "c", "d"]));
