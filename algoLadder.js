@@ -501,3 +501,27 @@ const largestProduct = (arr) => {
 //in our result array. Next we use the reduce method on our result array. Our accumulator is going to
 //be our largest product, which we return at the end. Using an if statement we compare the current value to the 
 //product, and if it is greater we set the largest product equal to value.
+
+//Algo 25: Two Sum 1
+//Given an array of numbers, return a new array containing just two numbers (from the original array) 
+// that add up to the number 10. If there are no two numbers that add up to 10, return false.
+// Specifically use nested loops to solve this exercise even though there are other approaches as well.
+
+const twoSumOne = (arr) => {
+  for(let i = 0; i < arr.length; i++){
+    for(let j = 0; j < arr.length; j++){
+      if(i !== j && arr[i] + arr[j] === 10){
+        return [arr[i], arr[j]]
+      }
+    }
+  }
+  return false;
+}
+
+// console.log(twoSumOne([2, 5, 3, 1, 0, 7, 11]));
+
+//In this solution, we use a nested for loop to loop through an array. The first loop loops over
+//each of the numbers in the given array. Each number is added to every other number in the second
+//for loop. We prevent numbers being added to themselves using an if statement to compare the 
+//indexes. If the two numbers are equal to 10 we return the numbers in an array. If there are
+//no numbers which add up to 10, we return false.
