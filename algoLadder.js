@@ -525,3 +525,34 @@ const twoSumOne = (arr) => {
 //for loop. We prevent numbers being added to themselves using an if statement to compare the 
 //indexes. If the two numbers are equal to 10 we return the numbers in an array. If there are
 //no numbers which add up to 10, we return false.
+
+//Algo 26: Merge Sorted Arrays
+//Given two sorted arrays, merge the second array into the first array while 
+// ensuring that the first array remains sorted. Do not use any built-in sort methods.
+
+const mergeSorted = (arr1, arr2) => {
+  for(let i = 0; i < arr2.length; i++){
+    for(let j = 0; j < arr1.length; j++){
+      if(arr2[i] > arr1[j] && arr2[i] < arr1[j+1]){
+        arr1.splice((j + 1), 0, arr2[i])
+      } else if(arr2[i] > arr1[arr1.length - 1]){
+        arr1.push(arr2[i])
+      } else if(arr2[i] < arr1[0]){
+        arr1.unshift(arr2[i])
+      }
+    }
+  }
+  return arr1;
+}
+
+console.log(mergeSorted([2, 5, 8], [1, 6, 9]))
+
+//In this solution, we use a nested for loop to loop through the two arrays. The outer
+//for loop is for the second array, whose values will be added to the first array. In 
+//the second for loop we are looping over the first array. Using if statements we compare our
+//current arr2 value to the current arr1 value. If the arr2 value is greater than the current arr1
+//value and less than the next arr1 value we know that's where we need to insert the arr2
+//value. We can use the splice method to insert the arr2 value at the index currently occupied
+//by the value that is greater than it. If the arr2 value is greater than all arr1 values
+//we can simply push it to the end of arr1. If the arr2 value is less than all arr1 values
+//we can simply unshift it to the end arr1.
