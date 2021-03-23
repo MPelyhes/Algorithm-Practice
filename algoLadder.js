@@ -690,3 +690,38 @@ const orderUp = (obj) =>{
 //In this solution we start by creating a totalPrice variable which will store the total price
 //of purchasing every menu item. Next, we use a for in loop to add the value of each key/vaule
 //pair to the totalPrice variable. Finally we return the totalPrice.
+
+//Algo 32: RNA Transcription 
+// Given a DNA strand, return its RNA complement (per RNA transcription).
+// Both DNA and RNA strands are a sequence of nucleotides. 
+// Here we're representing the sequences with single-letter characters (e.g. a sample strand may look like: "AGCA".)
+// Given a string representing a DNA strand, provide its transcribed RNA strand, according to the following pattern:
+// G becomes C
+// C becomes G
+// T becomes A
+// A becomes U
+
+const rnaTranscription = (str) => {
+  const dnaToRna = {
+    'G': 'C',
+    'C': 'G',
+    'T': 'A',
+    'A': 'U'
+  }
+
+  let rna = [];
+
+  for(let i = 0; i < str.length; i++){
+    rna.push(dnaToRna[str[i]]);
+  }
+
+  return rna.join('');
+}
+
+// console.log(rnaTranscription('ACGTGGTCTTAA'))
+
+//In this solution we start by creating a hash that has the DNA sequence as the key
+//with the complementary RNA sequence as the value. We create an empty array, in which
+//we will store the RNA strand that corresponds to the given DNA. We use a for loop
+//to loop over the DNA strand. We push the value of the key in our object that corresponds
+//to current DNA character. Finally, we join the array and return the resulting string. 
