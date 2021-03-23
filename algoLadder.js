@@ -22,7 +22,7 @@ const arrSum = (arr) => {
 // The reduce sum function was fisrt solved using a reduce function and then with a for/of functions
 
 // Algo 2: Less than 100
-// Given an array of numbers, return a new array that contains all numbers from the original array 
+// Given an array of numbers, return a new array that contains all numbers from the original array
 //that are less than 100.
 
 const underOneHundo = (arr) => {
@@ -33,13 +33,13 @@ const underOneHundo = (arr) => {
 
 const underOneHundoLoop = (arr) => {
   let result = [];
- 
+
   for(let num of arr){
     if(num < 100){
       result.push(num)
     }
   }
- 
+
   return result;
  }
 
@@ -181,7 +181,7 @@ const money = (str) => {
 
 // // console.log(alternator('hello, how are your porcupines today?”'));
 
-//Algo 11: First Duplicate Character 
+//Algo 11: First Duplicate Character
 // Given a string, find the first occurence of two duplicate characters in a row, and return the duplicated character.
 
 const duplicate = (str) => {
@@ -242,7 +242,7 @@ const palindrome = (str) => {
 }
 
 // console.log(palindrome('racecars'));
-//In this solution we create a variable which holds the reversed version of the original string. 
+//In this solution we create a variable which holds the reversed version of the original string.
 //We then use an if statement to compare it to the original
 
 //Algo 14: Hamming
@@ -280,13 +280,13 @@ const primes = (num) => {
      return false
    }
  }
- 
+
  return true;
-} 
+}
 
 // console.log(primes(55));
 
-//For this solution we start by checking if a number is less than or equal to 1, which would mean it is not prime. 
+//For this solution we start by checking if a number is less than or equal to 1, which would mean it is not prime.
 //Next we check if the number is equal to 2, since that is the only even prime number.
 // Then we use a for loop to check every number between two and the given number. If the given number divided by i is
 // zero, then we know it is not a prime number. If it makes it all the way through the for loop we know it is a prime number
@@ -331,7 +331,7 @@ const leapYear = (num) => {
   } else if(Number.isInteger(num/4)){
     return true;
   }
-  
+
   return false;
 }
 
@@ -341,8 +341,8 @@ const leapYear = (num) => {
 //Next we check if the number is divisible by four. If it is, then we have ourselves a leap year! Otherwise, we return false.
 
 //Algo 18: Fibonacci Numbers
-// Write a function that gives the Nth number of the Fibonacci Sequence. 
-// The Fibonacci sequence begins with 0 and 1, and every number thereafter is the sum of the previous two numbers. 
+// Write a function that gives the Nth number of the Fibonacci Sequence.
+// The Fibonacci sequence begins with 0 and 1, and every number thereafter is the sum of the previous two numbers.
 // So the sequence goes like this:
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, and so on until infinity...
 
@@ -352,7 +352,7 @@ const fibonacci = (num) => {
 
   let arr = [0, 1];
   let counter = 1
-  
+
   for(let i = 2; i <= num; i++){
     counter = (arr[i-1] + arr[i-2]);
     arr.push(counter);
@@ -414,13 +414,13 @@ const collatzConjecture = (num) => {
 
 // console.log(collatzConjecture(100))
 
-//In this solution we start by creating a variable to keep track of the number of steps 
+//In this solution we start by creating a variable to keep track of the number of steps
 //Next we run a do/while loop and if a number is even we divide it by two and add 1 to steps
 //If the number is odd we mulitply it by three and add one and increase steps.
 // We keep repeating that until the num is 1 and then we return the number of steps
 
 // Algo 21: Largest Palindrome Product
-// A palindromic number reads the same both ways. 
+// A palindromic number reads the same both ways.
 // The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
 // Find the largest palindrome made from the product of two 3-digit numbers.
 const largestPalindrome = () => {
@@ -428,7 +428,7 @@ const largestPalindrome = () => {
 }
 
 //Algo 22: Array Mesh 1
-// Given two arrays of strings, return a new string that contains every combination 
+// Given two arrays of strings, return a new string that contains every combination
 // of a string from the first array concatenated with a string from the second array.
 
 const arrayMesh = (arr1, arr2) => {
@@ -446,7 +446,7 @@ const arrayMesh = (arr1, arr2) => {
 // console.log(arrayMesh(["a", "b", "c"], ["d", "e", "f", "g"]));
 
 //In this solution we start by creating an empty array which we will use to store every
-//combination of string concatenation. Next we use a for loop to loop over each index of our 
+//combination of string concatenation. Next we use a for loop to loop over each index of our
 //first given array. Inside that for loop we create another for loop to loop over every index
 //of the second given array. In this second loop we push every combination of srtings to our result array.
 //Finally, we return the result.
@@ -499,11 +499,11 @@ const largestProduct = (arr) => {
 //inside of the first loop. If the index[i] is less than the index[j] we multiply arr[i] * arr[j].
 //This prevents us from multiplying numbers by themselves, and keeps us from duplicating product values
 //in our result array. Next we use the reduce method on our result array. Our accumulator is going to
-//be our largest product, which we return at the end. Using an if statement we compare the current value to the 
+//be our largest product, which we return at the end. Using an if statement we compare the current value to the
 //product, and if it is greater we set the largest product equal to value.
 
 //Algo 25: Two Sum 1
-//Given an array of numbers, return a new array containing just two numbers (from the original array) 
+//Given an array of numbers, return a new array containing just two numbers (from the original array)
 // that add up to the number 10. If there are no two numbers that add up to 10, return false.
 // Specifically use nested loops to solve this exercise even though there are other approaches as well.
 
@@ -522,12 +522,12 @@ const twoSumOne = (arr) => {
 
 //In this solution, we use a nested for loop to loop through an array. The first loop loops over
 //each of the numbers in the given array. Each number is added to every other number in the second
-//for loop. We prevent numbers being added to themselves using an if statement to compare the 
+//for loop. We prevent numbers being added to themselves using an if statement to compare the
 //indexes. If the two numbers are equal to 10 we return the numbers in an array. If there are
 //no numbers which add up to 10, we return false.
 
 //Algo 26: Merge Sorted Arrays
-//Given two sorted arrays, merge the second array into the first array while 
+//Given two sorted arrays, merge the second array into the first array while
 // ensuring that the first array remains sorted. Do not use any built-in sort methods.
 
 const mergeSorted = (arr1, arr2) => {
@@ -548,7 +548,7 @@ const mergeSorted = (arr1, arr2) => {
 // console.log(mergeSorted([2, 5, 8], [1, 6, 9]))
 
 //In this solution, we use a nested for loop to loop through the two arrays. The outer
-//for loop is for the second array, whose values will be added to the first array. In 
+//for loop is for the second array, whose values will be added to the first array. In
 //the second for loop we are looping over the first array. Using if statements we compare our
 //current arr2 value to the current arr1 value. If the arr2 value is greater than the current arr1
 //value and less than the next arr1 value we know that's where we need to insert the arr2
@@ -585,3 +585,64 @@ const coolio = (arr) => {
 //and add the numbers together at the corresponding index. Using a for loop, we
 //add the arr1 and arr2 values at the same index together. If they do not equal
 //100 then we return false. Otherwise, at the end of the function, we return true.
+
+//Algo 28: Longest Common Prefix
+// Write a function to find the longest common prefix string amongst an array of strings.
+// If there is no common prefix, return an empty string "".
+
+// const largestCommonPrefix = (arr) => {
+//   let longestStr = arr.reduce((str, value) => {
+//     if(value.length > str.length){
+//       str = value;
+//     }
+//     return str;
+//   })
+
+//   for(let i = 0; i < longestStr.length; i++){
+
+//   }
+
+//   return longestLength.length;
+// }
+
+// console.log(largestCommonPrefix(["flower","flow","flight"]))
+
+//Algo 29: Most Frequent Letter
+//Given a string, find the most commonly occurring letter.
+// Input: “peter piper picked a peck of pickled peppers”
+// Output: “p”
+
+const letterFrequency = (str) => {
+  let letters = {};
+  let modStr = str.split(' ').join('');
+
+  for(let i = 0; i < modStr.length; i++){
+    if(!letters.hasOwnProperty(modStr.charAt(i))){
+      letters[modStr[i]] = 1;
+    } else {
+      letters[modStr[i]] += 1;
+    }
+  }
+  
+  let counter = 0;
+  let result = "";
+  for(let key in letters){
+    if(letters[key] > counter){
+      counter = letters[key];
+      result = key;
+    }
+  }
+  return result;
+}
+
+// console.log(letterFrequency('peter piper picked a peck of pickled peppers'))
+
+//In this solution we start by creating an empty object which we will use to store
+//the different letters as the keys and the number of occurences as the value.
+//We then modify the string to remove the spaces. Next, we use a for loop to iterate over
+//each letter in the string. If our letters obj does not have a property of the current character
+//we add the character as a key with the value of 1. If it already has the character as a key,
+//we add 1 to the value. Next, we create a counter and results variable which will track the
+//character that has the highest number of occurenses. We check the number of occurences using
+//a for in loop. If the number of occuences is higher than the counter variable we update the counter
+//and the result variable. In the end we return result.
