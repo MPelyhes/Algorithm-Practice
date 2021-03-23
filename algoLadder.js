@@ -669,3 +669,24 @@ const countVotes = (arr) => {
 //If our object does not have a property that corresponds to the given array, we add it to
 //the object with an initial value of 1. If it does have that property then we add one
 //to the value. Finally, we return the object.
+
+//Algo 31: Order the whole menu
+// Given a hash, where the keys are strings representing food items, 
+// and the values are numbers representing the price of each food, 
+// return the amount someone would pay if they'd order one of each food from the entire menu.
+
+const orderUp = (obj) =>{
+  let totalPrice = 0;
+
+  for(let key in obj){
+    totalPrice += obj[key];
+  }
+
+  return totalPrice;
+}
+
+// console.log(orderUp( {"hot dog": 2, "hamburger": 3, "steak sandwich": 5, "fries": 3, "cole slaw": 1, "soda": 2}))
+
+//In this solution we start by creating a totalPrice variable which will store the total price
+//of purchasing every menu item. Next, we use a for in loop to add the value of each key/vaule
+//pair to the totalPrice variable. Finally we return the totalPrice.
