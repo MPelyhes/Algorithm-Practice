@@ -646,3 +646,26 @@ const letterFrequency = (str) => {
 //character that has the highest number of occurenses. We check the number of occurences using
 //a for in loop. If the number of occuences is higher than the counter variable we update the counter
 //and the result variable. In the end we return result.
+
+//Algo 30: Count Votes
+//Given an array of strings, return a hash that provides of a count of how many times each string occurs.
+const countVotes = (arr) => {
+  let votes = {};
+
+  for(let i = 0; i < arr.length; i++){
+    if(!votes.hasOwnProperty(arr[i])){
+      votes[arr[i]] = 1;
+    } else{
+      votes[arr[i]] += 1;
+    }
+  }
+
+  return votes;
+}
+
+// console.log(countVotes(["Dewey", "Truman", "Dewey", "Dewey", "Truman", "Truman", "Dewey", "Truman", "Truman", "Dewey", "Dewey"]))
+
+//In this solution, we start by creating an empty object. Then we loop over the given array.
+//If our object does not have a property that corresponds to the given array, we add it to
+//the object with an initial value of 1. If it does have that property then we add one
+//to the value. Finally, we return the object.
