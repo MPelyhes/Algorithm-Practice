@@ -545,7 +545,7 @@ const mergeSorted = (arr1, arr2) => {
   return arr1;
 }
 
-console.log(mergeSorted([2, 5, 8], [1, 6, 9]))
+// console.log(mergeSorted([2, 5, 8], [1, 6, 9]))
 
 //In this solution, we use a nested for loop to loop through the two arrays. The outer
 //for loop is for the second array, whose values will be added to the first array. In 
@@ -556,3 +556,32 @@ console.log(mergeSorted([2, 5, 8], [1, 6, 9]))
 //by the value that is greater than it. If the arr2 value is greater than all arr1 values
 //we can simply push it to the end of arr1. If the arr2 value is less than all arr1 values
 //we can simply unshift it to the end arr1.
+
+//Algo 27: 100 Coolio Array
+//Given an array of numbers, return true if the array is a "100 Coolio Array", or false if it is not.
+// A "100 Coolio Array" meets the following criteria:
+// Its first and last numbers add up to 100,
+// Its second and second-to-last numbers add up to 100,
+// Its third and third-to-last numbers add up to 100,
+// and so on and so forth.
+
+const coolio = (arr) => {
+  let length = arr.length;
+  let arr1 = arr.slice(0, (length / 2))
+  let arr2 = arr.slice(length/2).reverse();
+
+  for(let i = 0; i < arr1.length; i++){
+    if(arr1[i] + arr2[i] !== 100){
+      return false;
+    }
+  }
+
+  return true;
+}
+
+// console.log(coolio([90, 20, 70, 100, 30, 80, 10]))
+//In this solution we start by splitting the given array in half using the slice
+//method. We reverse the second half of the array to make it easier to loop over
+//and add the numbers together at the corresponding index. Using a for loop, we
+//add the arr1 and arr2 values at the same index together. If they do not equal
+//100 then we return false. Otherwise, at the end of the function, we return true.
