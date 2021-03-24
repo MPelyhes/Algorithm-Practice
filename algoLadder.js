@@ -724,4 +724,34 @@ const rnaTranscription = (str) => {
 //with the complementary RNA sequence as the value. We create an empty array, in which
 //we will store the RNA strand that corresponds to the given DNA. We use a for loop
 //to loop over the DNA strand. We push the value of the key in our object that corresponds
-//to current DNA character. Finally, we join the array and return the resulting string. 
+//to current DNA character. Finally, we join the array and return the resulting string.
+
+//Algo 33: Popular Posts
+// Given an array of hashes that represent a list of social media posts, 
+// return a new array that only contains the posts that have at least 1000 likes.
+
+const popularPosts = (arr) => {
+  let topPosts = [];
+
+  for(let post of arr){
+    for(let likes in post){
+      if(post.hasOwnProperty(likes) && post[likes] >= 1000){
+        topPosts.push(post)
+      }
+    }
+  }
+  return topPosts;
+}
+
+// console.log(popularPosts([
+//   {title: 'Me Eating Pizza', submitted_by: "Joelle P.", likes: 1549},
+//   {title: 'i never knew how cool i was until now', submitted_by: "Lyndon Johnson", likes: 3},
+//   {title: 'best selfie evar!!!', submitted_by: "Patti Q.", likes: 1092},
+//   {title: 'Mondays are the worst', submitted_by: "Aunty Em", likes: 644}
+//   ]));
+
+ //In this solution we start by creating an empty array, which will hold the most
+ //popular posts. Next we use a for/of loop to loop over each obj in the given
+ //array. Inside that we use a for/in loop to loop over the properties of the
+ //obj. If the object has a property called likes and likes are greater than or equal to 1000
+ //then we push that post into our topPosts array. Finally we return the topPosts array.
