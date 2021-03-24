@@ -847,3 +847,22 @@ const createObj = (arr, num) => {
 //Next we use a for/of loop to loop over each of the characters in the given array.
 //We add each character to the object with a value of the number param.
 //Finally, we return the new object
+
+//Algo 37: Flatten Hash
+//Given a hash, return a flat array containing all the hash’s keys and values.
+ 
+const flattenHash = (obj) => {
+  let hashArr = [];
+
+  for(let key in obj){
+    hashArr.push(key, obj[key]);
+  }
+
+  return hashArr;
+};
+
+// console.log(flattenHash( {'a': 1, 'b': 2, 'c': 3, 'd': 4}))
+//In this solution we start by creating an empty array which we will us
+// to store the various key/value pairs in the passed obj. Next we use a
+//for/in loop to iterate over the object and psuh the key and the value to
+//our hashArr. Finally, we return the hashArr.
