@@ -817,7 +817,7 @@ const anagrams = (str1, str2) =>{
   return true;
 }
 
-console.log(anagrams('tommarvoloriddle', 'iamlordvoldemort'));
+// console.log(anagrams('tommarvoloriddle', 'iamlordvoldemort'));
 //In this solution we start by returning false if the strings are not of equal length. 
 //Then we create two empty objects to store the letters
 //in the two passed strings as the keys, with the number of occurrences as the values.
@@ -826,3 +826,24 @@ console.log(anagrams('tommarvoloriddle', 'iamlordvoldemort'));
 //value if the letter is already in the object. Next we use a for/in loop on each of the
 //objects that we have created. We compare the keys and the values of the first object to the second object
 //and vice versa. 
+
+// Algo 36: ETL #1
+//You are given two parameters, an array and a number. 
+// Return a hash whose keys are each of the values from the array parameter, 
+// and whose values are the number parameter.
+
+const createObj = (arr, num) => {
+  let newObj = {};
+
+  for(let char of arr){
+    newObj[char] = num;
+  }
+
+  return newObj;
+}
+
+// console.log(createObj(["a", "e", "i", "o", "u"], 1))
+//In this solution we start by creating an empty object. 
+//Next we use a for/of loop to loop over each of the characters in the given array.
+//We add each character to the object with a value of the number param.
+//Finally, we return the new object
