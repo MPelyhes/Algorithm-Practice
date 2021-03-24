@@ -755,3 +755,74 @@ const popularPosts = (arr) => {
  //array. Inside that we use a for/in loop to loop over the properties of the
  //obj. If the object has a property called likes and likes are greater than or equal to 1000
  //then we push that post into our topPosts array. Finally we return the topPosts array.
+
+ //Algo 34: Complete the Data 
+//  Given an array of social media posts and a hash of users, return a list of posts 
+//  (as an array of hashes) that replaces the submitted_by id number as the person's actual name.
+
+// const completeData = (arr, obj) => {
+//  for(let id in obj){
+//    for(let post of arr){
+//      if(post.hasOwnProperty(id)){
+//        console.log(post.id)
+//      }
+//    }
+//  }
+// }
+
+// console.log(completeData([
+//   {title: 'Me Eating Pizza', submitted_by: 231, likes: 1549},
+//   {title: 'i never knew how cool i was until now', submitted_by: 989, likes: 3},
+//   {title: 'best selfie evar!!!', submitted_by: 111, likes: 1092},
+//   {title: 'Mondays are the worst', submitted_by: 403, likes: 644}
+//   ], {403: "Aunty Em", 231: "Joelle P.", 989: "Lyndon Johnson", 111: "Patti Q."}))
+
+//Algo 35: Anagrams
+//Given two strings, return true if they are anagrams of each other, and false if they are not.
+//An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
+//Do not use any built-in sort methods.
+
+const anagrams = (str1, str2) =>{
+  if(str1.length !== str2.length){
+    return false;
+  }
+
+  let obj1 = {};
+  let obj2 = {};
+
+  for(let i = 0; i < str1.length; i++){
+    if(!obj1.hasOwnProperty(str1[i])){
+      obj1[str1[i]] = 1;
+    } else {
+      obj1[str1[i]] += 1;
+    }
+}
+
+  for(let i = 0; i < str2.length; i++){
+    if(!obj2.hasOwnProperty(str2[i])){
+      obj2[str2[i]] = 1;
+    } else {
+      obj2[str2[i]] += 1;
+    }
+  }
+
+  for(let char in obj1){
+    if(!obj2.hasOwnProperty(char)){
+      
+      return false;
+    } else if(obj1[char] !== obj2[char]){
+      return false
+    }
+  }
+  return true;
+}
+
+console.log(anagrams('tommarvoloriddle', 'iamlordvoldemort'));
+//In this solution we start by returning false if the strings are not of equal length. 
+//Then we create two empty objects to store the letters
+//in the two passed strings as the keys, with the number of occurrences as the values.
+//Since we are solving without using sort methods, we start by creating two for loops that will 
+//loop over their respective strings and add their letters to their respective objects, or add 1 to the
+//value if the letter is already in the object. Next we use a for/in loop on each of the
+//objects that we have created. We compare the keys and the values of the first object to the second object
+//and vice versa. 
