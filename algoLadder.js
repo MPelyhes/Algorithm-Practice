@@ -866,3 +866,22 @@ const flattenHash = (obj) => {
 // to store the various key/value pairs in the passed obj. Next we use a
 //for/in loop to iterate over the object and psuh the key and the value to
 //our hashArr. Finally, we return the hashArr.
+
+//Algo 38: Flip Hash
+//Given a hash, create a new hash that has the keys and values switched.
+
+const flipHash = (obj) => {
+  let flippedHash = {};
+
+  for(let key in obj){
+    flippedHash[obj[key]] = key;
+  }
+
+  return flippedHash;
+}
+
+// console.log(flipHash({'a': 1, 'b': 2, 'c': 3, 'd': 4}))
+//In this solution we start by creating an empty object which
+//will store the flipped key/value pairs. Next we use a for/in loop 
+//to set a key using the passed objects value, with the passed objects
+//key set as the value. We return the flippedHash. 
