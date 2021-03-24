@@ -885,3 +885,30 @@ const flipHash = (obj) => {
 //will store the flipped key/value pairs. Next we use a for/in loop 
 //to set a key using the passed objects value, with the passed objects
 //key set as the value. We return the flippedHash. 
+
+//Algo 39: ETL # 2
+//You are given a hash in format #A, and you are to return the same data as a hash using format #B, as specified below:
+// Input:
+// {1: ["A", "E", "I", "O", "U"]}
+// Output:
+// {'a'; 1, 'e': 1,'i': 1,'o': 1,'u': 1}
+
+const etl2 = (obj) => {
+  let newObj = {};
+  
+  for(let key in obj){
+    for(let value of obj[key]){
+      newObj[value.toLowerCase()] = key;
+    }
+  }
+
+  return newObj;
+}
+
+  // console.log(etl2({'1': ["A", "E", "I", "O", "U"]}))
+  //In this solution we start by creating an empty object in which we will store
+  //our reformatted data.Next, use a for/in loop to iterate over the keys in the given
+  //object. Inside that we use a for/of loop to iterate over the array value.
+  //We turn the current letter into a lowercase letter and set it as a key on 
+  //our newObj with a value of the key of the original obj. Finally,
+  //we return the newObj.
