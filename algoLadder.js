@@ -760,22 +760,32 @@ const popularPosts = (arr) => {
 //  Given an array of social media posts and a hash of users, return a list of posts 
 //  (as an array of hashes) that replaces the submitted_by id number as the person's actual name.
 
-// const completeData = (arr, obj) => {
-//  for(let id in obj){
-//    for(let post of arr){
-//      if(post.hasOwnProperty(id)){
-//        console.log(post.id)
-//      }
-//    }
-//  }
-// }
+const completeData = (arr, obj) => {
+  for(let post of arr){
+    for(let key in post){
+      for(let id in obj){
+        if(post[key] === id){
+          post[key] = obj[id]
+        }
+      }
+    }
+  }
+  return arr;
+}
 
 // console.log(completeData([
-//   {title: 'Me Eating Pizza', submitted_by: 231, likes: 1549},
-//   {title: 'i never knew how cool i was until now', submitted_by: 989, likes: 3},
-//   {title: 'best selfie evar!!!', submitted_by: 111, likes: 1092},
-//   {title: 'Mondays are the worst', submitted_by: 403, likes: 644}
-//   ], {403: "Aunty Em", 231: "Joelle P.", 989: "Lyndon Johnson", 111: "Patti Q."}))
+//   {title: 'Me Eating Pizza', submitted_by: '231', likes: 1549},
+//   {title: 'i never knew how cool i was until now', submitted_by: '989', likes: 3},
+//   {title: 'best selfie evar!!!', submitted_by: '111', likes: 1092},
+//   {title: 'Mondays are the worst', submitted_by: '403', likes: 644}
+//   ], {'403': "Aunty Em", '231': "Joelle P.", '989': "Lyndon Johnson", '111': "Patti Q."}))
+
+//In this solution, we start with a for/of loop to iterate over each object
+//that is contained in the given array. Then we use a for/in loop to iterate
+//over the keys of each post object. Next we use a for/in loop to iterate over the 
+//keys in the passed object. If the value of the post object is identical to the
+//key of the passed object we change the value of the post object to be equal to
+//the value of the passed objects key. Finally we return the array with modified objects.
 
 //Algo 35: Anagrams
 //Given two strings, return true if they are anagrams of each other, and false if they are not.
