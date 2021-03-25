@@ -922,3 +922,48 @@ const etl2 = (obj) => {
   //We turn the current letter into a lowercase letter and set it as a key on 
   //our newObj with a value of the key of the original obj. Finally,
   //we return the newObj.
+
+  //Algo 40: Complete the Data 2
+  // Given an array of social media posts and an array of users, 
+  // return a list of posts (as an array of hashes) that replaces 
+  // the submitted_by id number as the person's actual name.
+
+  const completeDataTwo = (arr1, arr2) => {
+    for(let post of arr1){
+      for(let key in post){
+        for(let user of arr2){
+          for(let id in user){
+            if(post[key] === user[id]){
+              const propNames = Object.getOwnPropertyNames(user);
+              post[key] = user[propNames[1]]
+              // console.log(post[key]);
+            }
+          }
+        }
+      }
+    }
+    return arr1;
+  }
+
+  // console.log(completeDataTwo([
+  //   {title: 'Me Eating Pizza', submitted_by: 231, likes: 1549},
+  //   {title: 'i never knew how cool i was until now', submitted_by: 989, likes: 3},
+  //   {title: 'best selfie evar!!!', submitted_by: 111, likes: 1092},
+  //   {title: 'Mondays are the worst', submitted_by: 403, likes: 644}
+  //   ], [
+  //     {user_id: 403, name: "Aunty Em"},
+  //     {user_id: 231, name: "Joelle P."},
+  //     {user_id: 989, name: "Lyndon Johnson"},
+  //     {user_id: 111, name: "Patti Q."},
+  //     ]))
+
+  //In this solution we start with a for/of loop to iterate over the array of post objects.
+  //Then we use a for/in loop to iterate over the keys in each post object. Next, we use a
+  //for/of loop to iterate over the array of user objects. Then we use a for/in loop to
+  //iterate over the keys in the user objects. IF the post value matches one of the user
+  //values, we know we have found the user who made the post. So, we create a variable
+  //that will hold an array of property names for the user object, which we get by using
+  //the getOwnPropertyNames method. We know that the name property is second, so we will be 
+  //able to access it at the first index of propNames. We then change the current post[key] 
+  //value to be equal to the user[name] value. (We access the name prop in the propNames arr).
+  //Finally, we return the posts array with the modified post objects.
