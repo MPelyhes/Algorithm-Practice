@@ -967,3 +967,13 @@ const etl2 = (obj) => {
   //able to access it at the first index of propNames. We then change the current post[key] 
   //value to be equal to the user[name] value. (We access the name prop in the propNames arr).
   //Finally, we return the posts array with the modified post objects.
+
+  //Algo 41: Book Organizer
+  
+  const bookOrganizer = (arr) => {
+    let newOrder = [];
+
+    for(let book of arr){
+      const propName = Object.getOwnPropertyNames(book)
+    }
+  }
