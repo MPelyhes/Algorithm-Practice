@@ -154,6 +154,19 @@ const reverseString = (str) => {
 //For this solution we use the split method to turn the given string into an array. Each character has its own index, so we can reverse the array and
 //then join it back together without spaces between the letters
 
+const revString = (str) => {
+  let newString = "";
+  
+  for(let i = str.length; i >= 0; i--){
+  
+    newString += `${str.charAt(i)}`;
+  }
+
+  return newString;
+}
+
+console.log(revString("flip me right round"))
+
 // Algo 9: Show me the money
 // Given a string, return true if the “$” character is contained within the string or false if it is not.
 
