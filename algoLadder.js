@@ -225,7 +225,7 @@ const foundADupe = (str) => {
   }
 }
 
-console.log(foundADupe("This here cool string is a test"))
+// console.log(foundADupe("This here cool string is a test"))
 
 //Algo 12: Reverse Words
 // Given a string of words, return a new string that contains the words in reverse order.
@@ -269,6 +269,22 @@ const palindrome = (str) => {
 // console.log(palindrome('racecars'));
 //In this solution we create a variable which holds the reversed version of the original string.
 //We then use an if statement to compare it to the original
+
+const palSyndrome = (str) => {
+  let pal = ""
+
+  for(let i = str.length; i >= 0; i--){
+    pal += str.charAt(i);
+  }
+
+  if(pal === str){
+    return true
+  }
+
+  return false
+}
+
+console.log(palSyndrome("racecar"))
 
 //Algo 14: Hamming
 //Given two strings of equal length, return the number of characters that are different between the two strings.
