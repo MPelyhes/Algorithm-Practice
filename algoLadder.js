@@ -165,7 +165,7 @@ const revString = (str) => {
   return newString;
 }
 
-console.log(revString("flip me right round"))
+// console.log(revString("flip me right round"))
 
 // Algo 9: Show me the money
 // Given a string, return true if the “$” character is contained within the string or false if it is not.
@@ -214,6 +214,18 @@ const duplicate = (str) => {
 //In this solution we turn the given string into an array. Then we create a variable to be returned if there are no duplicates
 //Next, we use a for loop to loop over every character of the array until we find a duplicate. We know a character has a duplicate
 //next to it if it is identical to the character at the index which follows it
+
+const foundADupe = (str) => {
+  for(let i = 0; i < str.length; i++){
+    if(str.charAt(i) === str.charAt(i+1)){
+      console.log(str.charAt([i]))
+      console.log(str.charAt([i++]))
+      return str[i]
+    }
+  }
+}
+
+console.log(foundADupe("This here cool string is a test"))
 
 //Algo 12: Reverse Words
 // Given a string of words, return a new string that contains the words in reverse order.
