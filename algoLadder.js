@@ -448,7 +448,27 @@ const fibbersNacci = (num) => {
   return fibArr.pop();
 }
 
-console.log(fibbersNacci(5))
+// console.log(fibbersNacci(5))
+
+const fibArrNacci = (num) => {
+  if(num === 1){return 0}
+  if(num === 2){return 1}
+
+  let twoPastNum = 0;
+  let lastNum = 1;
+  let sum = 1;
+
+  for(let i = 3; i <= num; i++){
+    sum = (lastNum + twoPastNum)
+    // console.log(sum)
+    twoPastNum = lastNum;
+    lastNum = sum;
+  }
+
+  return sum;
+}
+
+// console.log(fibArrNacci(9))
 
 //Algo 19: Multiples of 3 & 5
 //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
