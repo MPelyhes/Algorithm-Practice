@@ -358,6 +358,25 @@ const fizzBuzz = (num) => {
 
 // console.log(fizzBuzz(100));
 
+const fizzyBuzzer = (num) => {
+  let result = []
+
+  for(let i = 1; i <= num; i++){
+    if(i % 3 === 0 && i % 5 === 0){
+      result.push("FIZZBUZZ")
+    } else if(i % 3 === 0){
+      result.push("FIZZ")
+    } else if(i % 5 === 0){
+      result.push("BUZZ")
+    } else{
+      result.push(i)
+    }
+  }
+
+  return result;
+}
+// console.log(fizzyBuzzer(100))
+
 //Algo 17: Leap Year
 // Given a year, report if it is a leap year.
 // The tricky thing here is that a leap year in the Gregorian calendar occurs:
