@@ -322,7 +322,7 @@ const primes = (num) => {
    }
  }
 
- return true;
+//  return true;
 }
 
 // console.log(primes(55));
@@ -427,6 +427,28 @@ const fibonacci = (num) => {
 //Next, we create an array which holds the first two numbers of the sequence. Then we create a counter, which begins ar the secong
 //number of the sequence. Then we use a for loop to add the two previous fibonacci numbers together, until we have the correlating
 //fibonacci number for the argument passed in. We tracke the fibonacci numbers by adding them to our array.
+
+const fibbersNacci = (num) => {
+  if(num === 1){
+    return 0;
+  }
+  if(num === 2){
+    return 1
+  }
+
+  let fibArr = [0, 1]
+
+  for(let i = 2; i < num; i++){
+    let sumMe = fibArr[i - 1]; 
+    let sumTwo = fibArr[i - 2];
+    let sum = sumMe + sumTwo;
+    fibArr.push(sum)
+  }
+
+  return fibArr.pop();
+}
+
+console.log(fibbersNacci(5))
 
 //Algo 19: Multiples of 3 & 5
 //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
