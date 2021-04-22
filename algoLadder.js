@@ -486,11 +486,25 @@ const multiples = (num) => {
   return sum;
 }
 
-// console.log(multiples(100));
+console.log(multiples(1000));
 
 //For this solution we start by creating a variable that will hold the sum of all numbers that are divisble by either 3 or 5
 //Next we use a for loop to check every number between 0 and the given number to see if it is divisible by 3 or 5
 //If it is divisble then we add it to the sum variable, which we return at the end
+
+const threesAndFives = (num) => {
+  let sum = 0;
+
+  for(let i = 0; i < num; i++){
+    if(i % 3 === 0 || i % 5 === 0){
+      sum += i;
+    }
+  }
+
+  return sum;
+}
+
+console.log(threesAndFives(10))
 
 //Algo 20: Collatz conjecture
 //The Collatz Conjecture or 3x+1 problem can be summarized as follows:
