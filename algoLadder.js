@@ -585,6 +585,20 @@ const arrayMesh = (arr1, arr2) => {
 //of the second given array. In this second loop we push every combination of srtings to our result array.
 //Finally, we return the result.
 
+const arrMesh = (arr1, arr2) => {
+  let newArr = [];
+
+  for(let i = 0; i < arr1.length; i++){
+    for(let j =0; j < arr2.length; j++){
+      newArr.push(arr1[i] + arr2[j])
+    }
+  }
+
+  return newArr;
+}
+
+// console.log(arrMesh(["a", "b", "c"], ["d", "e", "f", "g"]))
+
 //Algo 23: Array Mesh 2
 //Given ONE array of strings, return a new array that contains every combination of each string with every other string in the array.
 
