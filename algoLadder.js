@@ -504,7 +504,7 @@ const threesAndFives = (num) => {
   return sum;
 }
 
-console.log(threesAndFives(10))
+// console.log(threesAndFives(10))
 
 //Algo 20: Collatz conjecture
 //The Collatz Conjecture or 3x+1 problem can be summarized as follows:
@@ -534,6 +534,24 @@ const collatzConjecture = (num) => {
 //Next we run a do/while loop and if a number is even we divide it by two and add 1 to steps
 //If the number is odd we mulitply it by three and add one and increase steps.
 // We keep repeating that until the num is 1 and then we return the number of steps
+
+const collCatz = (num) => {
+  let steps = 0;
+  let newNum = num;
+  do{
+    console.log(newNum)
+    if(newNum % 2 === 0){
+      newNum = newNum / 2;
+    }else{
+      newNum = (newNum * 3) + 1;
+    }
+    steps++
+  }while(newNum !== 1)
+
+  return steps;
+}
+
+// s
 
 // Algo 21: Largest Palindrome Product
 // A palindromic number reads the same both ways.
