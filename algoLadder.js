@@ -798,7 +798,7 @@ const letterFrequency = (str) => {
 
 const frequentLetter = (str) => {
   let letters = {};
-  let newStr = str.split(" ").join("");
+  let newStr = str.split(" ").join("").toLowerCase();
   
   for(let char of newStr){
     if(letters[char] > 0){
@@ -820,7 +820,7 @@ const frequentLetter = (str) => {
   return mostCommon;
 }
 
-console.log(frequentLetter("peter piper picked a peck of pickled peppers"))
+// console.log(frequentLetter("peter Piper Picked a peck of pickled peppers"))
 //Algo 30: Count Votes
 //Given an array of strings, return a hash that provides of a count of how many times each string occurs.
 const countVotes = (arr) => {
@@ -843,6 +843,22 @@ const countVotes = (arr) => {
 //If our object does not have a property that corresponds to the given array, we add it to
 //the object with an initial value of 1. If it does have that property then we add one
 //to the value. Finally, we return the object.
+
+const stopTheCount = (arr) => {
+  let count = {};
+
+  for(let str of arr){
+    if(count[str] > 0){
+      count[str]++
+    } else {
+      count[str] = 1;
+    }
+  }
+
+  return count;
+}
+
+console.log(stopTheCount(["Dewey", "Truman", "Dewey", "Dewey", "Truman", "Truman", "Dewey", "Truman", "Truman", "Dewey", "Dewey"]))
 
 //Algo 31: Order the whole menu
 // Given a hash, where the keys are strings representing food items, 
