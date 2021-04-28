@@ -933,7 +933,7 @@ const dnaToRNA = (str) => {
   return rna;
 }
 
-console.log(dnaToRNA('ACGTGGTCTTAA'));
+// console.log(dnaToRNA('ACGTGGTCTTAA'));
 
 //Algo 33: Popular Posts
 // Given an array of hashes that represent a list of social media posts, 
@@ -964,6 +964,25 @@ const popularPosts = (arr) => {
  //array. Inside that we use a for/in loop to loop over the properties of the
  //obj. If the object has a property called likes and likes are greater than or equal to 1000
  //then we push that post into our topPosts array. Finally we return the topPosts array.
+
+ const popularity = (arr) => {
+   let sorted = [];
+
+   for(let obj of arr){
+     if(obj["likes"] >= 1000){
+       sorted.push(obj)
+     }
+   }
+
+   return sorted;
+ }
+
+//  console.log(popularity(([
+//   {title: 'Me Eating Pizza', submitted_by: "Joelle P.", likes: 1549},
+//   {title: 'i never knew how cool i was until now', submitted_by: "Lyndon Johnson", likes: 3},
+//   {title: 'best selfie evar!!!', submitted_by: "Patti Q.", likes: 1092},
+//   {title: 'Mondays are the worst', submitted_by: "Aunty Em", likes: 644}
+//   ])))
 
  //Algo 34: Complete the Data 
 //  Given an array of social media posts and a hash of users, return a list of posts 
