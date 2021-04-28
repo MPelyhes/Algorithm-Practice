@@ -1015,6 +1015,21 @@ const completeData = (arr, obj) => {
 //key of the passed object we change the value of the post object to be equal to
 //the value of the passed objects key. Finally we return the array with modified objects.
 
+const completed = (posts, users) => {
+  for(let post of posts){
+    let userId = post["submitted_by"]
+    post["submitted_by"] = users[userId]
+  }
+  return posts
+}
+
+console.log(completed([
+    {title: 'Me Eating Pizza', submitted_by: '231', likes: 1549},
+    {title: 'i never knew how cool i was until now', submitted_by: '989', likes: 3},
+    {title: 'best selfie evar!!!', submitted_by: '111', likes: 1092},
+    {title: 'Mondays are the worst', submitted_by: '403', likes: 644}
+    ], {'403': "Aunty Em", '231': "Joelle P.", '989': "Lyndon Johnson", '111': "Patti Q."}));
+
 //Algo 35: Anagrams
 //Given two strings, return true if they are anagrams of each other, and false if they are not.
 //An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
