@@ -728,6 +728,7 @@ const coolio = (arr) => {
 }
 
 // console.log(coolio([90, 20, 70, 100, 30, 80, 10]))
+
 //In this solution we start by splitting the given array in half using the slice
 //method. We reverse the second half of the array to make it easier to loop over
 //and add the numbers together at the corresponding index. Using a for loop, we
@@ -795,6 +796,31 @@ const letterFrequency = (str) => {
 //a for in loop. If the number of occuences is higher than the counter variable we update the counter
 //and the result variable. In the end we return result.
 
+const frequentLetter = (str) => {
+  let letters = {};
+  let newStr = str.split(" ").join("");
+  
+  for(let char of newStr){
+    if(letters[char] > 0){
+      letters[char]++
+    } else{
+      letters[char] = 1
+    }
+  }
+
+  let currentHigh = 0;
+  let mostCommon = "";
+  for(let char in letters){
+    if(letters[char] > currentHigh){
+      currentHigh = letters[char];
+      mostCommon = char;
+    }
+  }
+
+  return mostCommon;
+}
+
+console.log(frequentLetter("peter piper picked a peck of pickled peppers"))
 //Algo 30: Count Votes
 //Given an array of strings, return a hash that provides of a count of how many times each string occurs.
 const countVotes = (arr) => {
