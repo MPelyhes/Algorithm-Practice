@@ -848,17 +848,13 @@ const stopTheCount = (arr) => {
   let count = {};
 
   for(let str of arr){
-    if(count[str] > 0){
-      count[str]++
-    } else {
-      count[str] = 1;
-    }
+    count[str] > 0 ? count[str]++ : count[str] = 1;
   }
 
   return count;
 }
 
-console.log(stopTheCount(["Dewey", "Truman", "Dewey", "Dewey", "Truman", "Truman", "Dewey", "Truman", "Truman", "Dewey", "Dewey"]))
+// console.log(stopTheCount(["Dewey", "Truman", "Dewey", "Dewey", "Truman", "Truman", "Dewey", "Truman", "Truman", "Dewey", "Dewey"]))
 
 //Algo 31: Order the whole menu
 // Given a hash, where the keys are strings representing food items, 
