@@ -877,6 +877,16 @@ const orderUp = (obj) =>{
 //of purchasing every menu item. Next, we use a for in loop to add the value of each key/vaule
 //pair to the totalPrice variable. Finally we return the totalPrice.
 
+const bidOrder = (obj) => {
+  let sum = 0;
+
+  for(let item in obj){
+    sum += obj[item]
+  }
+
+  return sum;
+}
+
 //Algo 32: RNA Transcription 
 // Given a DNA strand, return its RNA complement (per RNA transcription).
 // Both DNA and RNA strands are a sequence of nucleotides. 
