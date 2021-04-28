@@ -922,6 +922,19 @@ const rnaTranscription = (str) => {
 //to loop over the DNA strand. We push the value of the key in our object that corresponds
 //to current DNA character. Finally, we join the array and return the resulting string.
 
+const dnaToRNA = (str) => {
+  const dna = {"G":"C", "C":"G", "T":"A", "A":"U"};
+  let rna = "";
+
+  for(let char of str){
+    rna += dna[char]
+  }
+
+  return rna;
+}
+
+console.log(dnaToRNA('ACGTGGTCTTAA'));
+
 //Algo 33: Popular Posts
 // Given an array of hashes that represent a list of social media posts, 
 // return a new array that only contains the posts that have at least 1000 likes.
