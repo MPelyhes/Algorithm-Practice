@@ -1023,12 +1023,12 @@ const completed = (posts, users) => {
   return posts
 }
 
-console.log(completed([
-    {title: 'Me Eating Pizza', submitted_by: '231', likes: 1549},
-    {title: 'i never knew how cool i was until now', submitted_by: '989', likes: 3},
-    {title: 'best selfie evar!!!', submitted_by: '111', likes: 1092},
-    {title: 'Mondays are the worst', submitted_by: '403', likes: 644}
-    ], {'403': "Aunty Em", '231': "Joelle P.", '989': "Lyndon Johnson", '111': "Patti Q."}));
+// console.log(completed([
+//     {title: 'Me Eating Pizza', submitted_by: '231', likes: 1549},
+//     {title: 'i never knew how cool i was until now', submitted_by: '989', likes: 3},
+//     {title: 'best selfie evar!!!', submitted_by: '111', likes: 1092},
+//     {title: 'Mondays are the worst', submitted_by: '403', likes: 644}
+//     ], {'403': "Aunty Em", '231': "Joelle P.", '989': "Lyndon Johnson", '111': "Patti Q."}));
 
 //Algo 35: Anagrams
 //Given two strings, return true if they are anagrams of each other, and false if they are not.
@@ -1079,6 +1079,31 @@ const anagrams = (str1, str2) =>{
 //value if the letter is already in the object. Next we use a for/in loop on each of the
 //objects that we have created. We compare the keys and the values of the first object to the second object
 //and vice versa. 
+
+const anagramz = (str1, str2) => {
+  let newStr1 = str1.split(" ").join("").toLowerCase("");
+  let newStr2 = str2.split(" ").join("").toLowerCase("");
+
+  const strToHash = (str) => {
+    let strHash = {};
+    for(let char of str){
+      strHash[char] > 0 ? strHash[char]++ : strHash[char] = 1;
+      }
+      return strHash
+  }
+
+  const str1Hash = strToHash(newStr1);
+  const str2Hash = strToHash(newStr2);
+
+  for(let letter in str1Hash){
+    if(str1Hash[letter] !== str2Hash[letter]){
+      return false
+    }
+  }
+  return true;
+}
+
+console.log(anagramz('tommarvoloriddle', 'iamlordvoldemort'));
 
 // Algo 36: ETL #1
 //You are given two parameters, an array and a number. 
