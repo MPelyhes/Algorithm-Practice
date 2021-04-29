@@ -126,4 +126,43 @@ const countUniqueVariables = (arr) => {
   return left + 1;
 }
 
-console.log(countUniqueVariables([1,1,1,1,1,2,3,3,44]))
+// console.log(countUniqueVariables([1,1,1,1,1,2,3,3,44]));
+
+//Frequency Counter - sameFrequency
+//Write a function called sameFrequency. Given two positive integers, find out if the two numbers have the same frequency of digits.
+//The solution must be written in O(N) time complexity
+
+const sameFrequency = (num1, num2) => {
+  const str1 = String(num1);
+  const str2 = String(num2);
+  if(str1.length !== str2.length){
+    return false;
+  }
+
+  const strToHash = (str) => {
+    let hash ={};
+    for(let char of str){
+      if(hash[char] > 0){
+        hash[char]++
+      } else {
+        hash[char] = 0;
+      }
+    }
+    return hash;
+  }
+
+  const hash1 = strToHash(str1);
+  const hash2 = strToHash(str2);
+
+  for(let char in hash1){
+    if(hash1[char] !== hash2[char]){
+      return false;
+    }
+  }
+
+  return true;
+}
+
+// console.log(sameFrequency(182, 281))
+// console.log(sameFrequency(34, 14))
+// console.log(sameFrequency(35897, 73598));
