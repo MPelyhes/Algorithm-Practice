@@ -231,3 +231,29 @@ const averagePair = (arr, target) => {
 }
 
 // console.log(averagePair([1,1,3, 6, 7, 9], 2.5));
+
+//Pointer - isSubsequence
+//Write a function that takes in two strings and checks whether the characters in the first string form a subsequence of the chars in the
+//second string. In other words the function should check whether the chars in the first string appear somewhere in the second string without their order
+//changing.
+
+const isSubsequence = (str1, str2) => {
+  let i = 0;
+  let j = 0;
+  if(!str1){return true};
+  do{
+    if(str1[i] === str2[j]){
+      i++
+    };
+    if(i === str1.length){
+      return true;
+    }
+    j++
+  } while(j < str2.length);
+
+  return false;
+}
+
+// console.log(isSubsequence("hello", "hello world"));
+// console.log(isSubsequence("sing", "sting"));
+// console.log(isSubsequence("abc", "acb"));
