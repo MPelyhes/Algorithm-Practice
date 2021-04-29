@@ -102,3 +102,28 @@ function liquidDensity(arr){
 // console.log(liquidDensity([['A','H','W','O']]));
 
 //This doesn't really work if there are not an equal number of particles for each liquid type...
+
+//Multiple pointers
+//Implement a function called countUniqeVariables, which accepts a sorted array, and counts the unique values in the array.
+//There can be negative numbers in the array, but it will always be sorted
+
+const countUniqueVariables = (arr) => {
+  if(arr.length === 0){
+    return 0
+  }
+  let left = 0;
+  let right = 1;
+
+  do{
+    if(arr[left] === arr[right]){
+      right++
+    } else {
+      left++
+      arr.splice(left, 1, arr[right])
+    }
+  } while(right < arr.length)
+  console.log(left, right)
+  return (left += 1);
+}
+
+// console.log(countUniqueVariables([1,1,1,1,1,2]))
