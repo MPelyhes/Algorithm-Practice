@@ -166,3 +166,25 @@ const sameFrequency = (num1, num2) => {
 // console.log(sameFrequency(182, 281))
 // console.log(sameFrequency(34, 14))
 // console.log(sameFrequency(35897, 73598));
+
+//Frequency Counter / Multiple Pointers - areThereDupes
+//Implement a func called areThereDupes which accepts a variable number of arguments, and checks whether there are any duplicated among
+//the arguments passed in. Solved with frequency counter pattern or multiple pointers pattern
+
+
+//Frequency pattern solution
+const areThereDupes = (...args) => {
+  let argsHash = {};
+
+  for(let arg of args){
+    if(argsHash[arg] > 0){
+      return true
+    } else {
+      argsHash[arg] = 1;
+    }
+  }
+
+  return false;
+}
+
+// console.log(areThereDupes(1, 3, "string", true, 1));
