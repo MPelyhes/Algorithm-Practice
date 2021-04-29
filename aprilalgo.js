@@ -188,3 +188,23 @@ const areThereDupes = (...args) => {
 }
 
 // console.log(areThereDupes(1, 3, "string", true, 1));
+
+//Are there dupes multiple pointers solution
+
+const areThereDupesPointers = (...args) => {
+  args.sort((a,b) => a > b);
+  let start = 0;
+  let next = 1;
+
+  while(next < args.length){
+    if(args[start] === args[next]){
+      return true;
+    }
+    
+    start++
+    next++
+  }
+  return false;
+}
+
+// console.log(areThereDupesPointers(1, 3, "string", true));
