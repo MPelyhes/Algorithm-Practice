@@ -119,11 +119,11 @@ const countUniqueVariables = (arr) => {
       right++
     } else {
       left++
-      arr.splice(left, 1, arr[right])
+      arr[left] = arr[right]
     }
   } while(right < arr.length)
   console.log(left, right)
-  return (left += 1);
+  return left + 1;
 }
 
-// console.log(countUniqueVariables([1,1,1,1,1,2]))
+console.log(countUniqueVariables([1,1,1,1,1,2,3,3,44]))
