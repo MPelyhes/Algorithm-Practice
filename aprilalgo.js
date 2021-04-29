@@ -208,3 +208,26 @@ const areThereDupesPointers = (...args) => {
 }
 
 // console.log(areThereDupesPointers(1, 3, "string", true));
+
+//Mulitple pointers - averagePair
+//Write a function that takes in a sorted array of integers and a target average value. Determine if there is a pair of values
+//where the average of the pairs equals the target value
+
+const averagePair = (arr, target) => {
+  let left = 0;
+  let right = arr.length - 1;
+
+  do{
+    if((arr[left] + arr[right]) / 2 === target){
+      return true;
+    } else if((arr[left] + arr[right]) / 2  < target){
+      left++
+    } else{
+      right--
+    }
+  } while(left < right);
+
+  return false;
+}
+
+// console.log(averagePair([1,1,3, 6, 7, 9], 2.5));
