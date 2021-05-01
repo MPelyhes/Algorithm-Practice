@@ -312,3 +312,26 @@ const minSubarrayLen = (nums, sum) => {
 }
 
 // console.log(minSubarrayLen([2,3,1,2,4,3], 7));
+
+const findLongestSubstring = (str) => {
+  if(!str.length) return null;
+
+  let start = 0;
+  let seen = {};
+  let longest = 1;
+
+  for(let i = 0; i <str.length; i++){
+    let char = str[i];
+    if(seen[char]){
+      start = Math.max(start, seen[char])
+    }
+    //index - beginning of substring + (to include current in count)
+    longest = Math.max(longest, i - start + 1);
+    // store the index of the next char so as not to double count
+    seen[char] = i + 1;
+  }
+
+  return longest;
+}
+
+// console.log(findLongestSubstring("rithmschool"));
