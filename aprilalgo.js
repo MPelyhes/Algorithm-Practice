@@ -354,3 +354,38 @@ const power = (base, exponent) => {
 }
 
 // console.log(power(3,9));
+
+const factorial = (num) => {
+  if(num < 0) return null;
+  let product = 1;
+
+  const factorialHelper = (num) => {
+    if(num <= 1){
+      return product;
+    } else {
+      product *= num;
+      num--;
+      return factorialHelper(num);
+    }
+  }
+  return factorialHelper(num);
+}
+
+// console.log(factorial(0))
+
+const productOfArray = (arr) => {
+  let product = 1;
+
+  const productHelper = (arr) => {
+    if(!arr.length){
+      return product;
+    } else{ 
+      product *= arr[0];
+      return productHelper(arr.slice(1))
+    }
+  }
+
+  return productHelper(arr);
+}
+ 
+console.log(productOfArray([1,2,3,10]))
