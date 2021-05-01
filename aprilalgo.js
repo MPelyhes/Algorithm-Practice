@@ -335,3 +335,22 @@ const findLongestSubstring = (str) => {
 }
 
 // console.log(findLongestSubstring("rithmschool"));
+
+const power = (base, exponent) => {
+  if(exponent === 0) return 1;
+  let result = base;
+
+  const powerHelper = (base, exponent) => {
+    if(exponent === 1){
+      return result;
+    } else {
+      result *= base;
+      exponent--;
+      return powerHelper(base, exponent);
+    }
+  }
+
+  return powerHelper(base, exponent);
+}
+
+// console.log(power(3,9));
