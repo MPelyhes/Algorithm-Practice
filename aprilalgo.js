@@ -388,4 +388,22 @@ const productOfArray = (arr) => {
   return productHelper(arr);
 }
  
-console.log(productOfArray([1,2,3,10]))
+// console.log(productOfArray([1,2,3,10]))
+
+const recursiveRange = (num) => {
+  let sum = 0;
+
+  const helper = (num) => {
+    if(num === 0){
+      return sum;
+    } else {
+      sum += num;
+      num--;
+      return helper(num);
+    }
+  }
+
+  return helper(num);
+}
+
+console.log(recursiveRange(10));
