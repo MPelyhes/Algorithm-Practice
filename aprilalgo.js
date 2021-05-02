@@ -494,3 +494,13 @@ const isPalindrome = (str) => {
 
 // console.log(isPalindrome("racecars"));
 
+const altPalindrome = (str) => {
+  const reverse = (str) => {
+    if(!str.length) return "";
+    return str[str.length - 1] + reverse(str.slice(0, (str.length-1)));
+  }
+
+  return str === reverse(str) ? true : false;
+};
+
+// console.log(altPalindrome("racecars"));
