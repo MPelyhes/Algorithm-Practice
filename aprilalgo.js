@@ -355,6 +355,11 @@ const power = (base, exponent) => {
 
 // console.log(power(3,9));
 
+const altPower = (base, exponent) => {
+  if(exponent === 0) return 1;
+  return base * power(base, exponent - 1);
+}
+
 const factorial = (num) => {
   if(num < 0) return null;
   let product = 1;
@@ -373,6 +378,12 @@ const factorial = (num) => {
 
 // console.log(factorial(0))
 
+const altFactorial = (num) => {
+  if (num < 0) return 0;
+  if(num <= 1) return 1;
+  return num * altFactorial(num -1);
+}
+
 const productOfArray = (arr) => {
   let product = 1;
 
@@ -389,6 +400,12 @@ const productOfArray = (arr) => {
 }
  
 // console.log(productOfArray([1,2,3,10]))
+
+const altProductOfArray = (arr) => {
+  if(arr.length === 0) return 1;
+  return arr[0] * altProductOfArray(arr.slice(1));
+  
+}
 
 //Write a function which accepts a number and adds up all the numbers from zero to the number passed to the function
 
@@ -409,6 +426,11 @@ const recursiveRange = (num) => {
 }
 
 // console.log(recursiveRange(10));
+
+const altRecursiveRange = (num) => {
+  if(num === 0) return 0;
+  return num + altRecursiveRange(num - 1);
+}
 
 //Write a recursive function which accepts a number and returns the nth number in the fibonacci sequence
 
@@ -435,4 +457,11 @@ const fib = (num) => {
   return helper(num);
 }
 
-console.log(fib(35));
+// console.log(fib(35));
+
+const altFib = (num) => {
+  if(num <=2 ) return 1;
+  return altFib(num - 1) + altFib(num - 2);
+}
+
+// console.log(altFib(10));
