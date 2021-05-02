@@ -504,3 +504,15 @@ const altPalindrome = (str) => {
 };
 
 // console.log(altPalindrome("racecars"));
+
+
+//write a recursive function which accepts an array and a callback. The function returns true if a single value in the array
+//returns true when passed to the callback. Otherwise it returns false.
+
+const isOdd = val => val % 2 !== 0;
+function someRecursive(arr, callback){
+  if(!arr.length) return false;
+  return callback(arr[0]) ? true : someRecursive(arr.slice(1), callback);
+}
+
+// console.log(someRecursive([4, 6, 8], isOdd));
