@@ -474,3 +474,23 @@ const reverse = (str) => {
 
 // console.log(reverse("hello world it's me, your boy!"));
 
+const isPalindrome = (str) => {
+  let left = 0;
+  let right = str.length - 1;
+
+  const palChecker = (str) => {
+    if(left > right) return true;
+    if(str[left] === str[right]){
+      left++;
+      right--;
+      return palChecker(str);
+    } else{
+      return false;
+    }
+  };
+
+  return palChecker(str);
+}
+
+// console.log(isPalindrome("racecars"));
+
