@@ -390,6 +390,8 @@ const productOfArray = (arr) => {
  
 // console.log(productOfArray([1,2,3,10]))
 
+//Write a function which accepts a number and adds up all the numbers from zero to the number passed to the function
+
 const recursiveRange = (num) => {
   let sum = 0;
 
@@ -406,4 +408,31 @@ const recursiveRange = (num) => {
   return helper(num);
 }
 
-console.log(recursiveRange(10));
+// console.log(recursiveRange(10));
+
+//Write a recursive function which accepts a number and returns the nth number in the fibonacci sequence
+
+const fib = (num) => {
+  if(num <= 1) return 1;
+
+  let secondLastNum = 1;
+  let lastNum = 1;
+  let sum = 0;
+
+  const helper = (num) => {
+    console.log(sum);
+    if(num <= 2){
+      return sum;
+    } else {
+      sum = lastNum + secondLastNum;
+      secondLastNum = lastNum
+      lastNum = sum;
+      num--;
+      return helper(num);
+    }
+  };
+
+  return helper(num);
+}
+
+console.log(fib(35));
