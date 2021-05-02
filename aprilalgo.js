@@ -465,3 +465,12 @@ const altFib = (num) => {
 }
 
 // console.log(altFib(10));
+
+//Write a recursive function that accepts a string and returns the string with all the characters reversed
+const reverse = (str) => {
+  if(!str.length) return "";
+  return str[str.length-1] + reverse(str.slice(0, (str.length-1)));
+}
+
+// console.log(reverse("hello world it's me, your boy!"));
+
