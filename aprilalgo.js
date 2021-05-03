@@ -621,3 +621,17 @@ const collectStrings = (obj) => {
 }
 
 // console.log(collectStrings(obj2));
+
+//linear search
+//Write a function which accepts an array and a value and returns the index at which the value exists
+//if the value does not extist in the array, return -1
+
+const linearSearch = (arr, val) => {
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] === val){
+      return i;
+    }
+  }
+  return -1;
+}
+
