@@ -516,3 +516,16 @@ function someRecursive(arr, callback){
 }
 
 // console.log(someRecursive([4, 6, 8], isOdd));
+
+//Create a recursive function that can flatten a mulitdeminsional array without using any built-in flattening functions
+const flatten = (oldArr) => {
+  let newArr = [];
+  for(let i = 0; i < oldArr.length; i++){
+    if(Array.isArray(oldArr[i])){
+      newArr = newArr.concat(flatten(oldArr[i]))
+      } else {
+        newArr.push(oldArr[i])
+      }
+    }
+  return newArr;
+}
