@@ -577,3 +577,25 @@ const capitalizeWords = (arr, newArr =[]) => {
 }
 
 // console.log(capitalizeWords(["hello", "world", "how", "feel"]))
+
+//stringifyNumbers
+//Write a recursive function that takes in an object and finds all of the values which are numbers and converts them to strings. 
+
+const stringifyNumbers = (obj) => {
+  const newObj = {...obj}
+
+  const stringHelper = (obj) => {
+    for(let key in obj){
+      if(typeof obj[key] === "object"){
+        stringHelper(obj[key]);
+      } else if(typeof obj[key] === "number"){
+        obj[key] = String(obj[key]);
+      }
+    }
+    return obj
+  }
+  console.log(newObj)
+  return stringHelper(newObj);
+}
+
+// console.log(stringifyNumbers(obj2));
