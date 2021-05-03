@@ -529,3 +529,38 @@ const flatten = (oldArr) => {
     }
   return newArr;
 }
+
+//Write a recursive function that accepts an array of strings. Capitalize the first letter of each string in the array
+
+const capitalizeFirst = (arr, newArr = []) => {
+  if(arr.length === 0){
+    return newArr;
+  }
+  newArr.push(arr[0].charAt(0).toUpperCase() + arr[0].slice(1));
+  return capitalizeFirst(arr.slice(1), newArr);
+}
+
+
+// console.log(capitalizeFirst(["string", "hello"]));
+
+const obj2 = {
+  a: 2,
+  b: {b: 2, bb: {b: 3, bb: {b: 2}}},
+  c: {c: {c: 2}, cc: 'ball', ccc: 5},
+  d: 1,
+  e: {e: {e: 2}, ee: 'car'}
+};
+
+const nestedEvenSum = (obj,sum = 0) => {
+    for(let key in obj){
+      if(typeof obj[key] === "object"){
+       sum += nestedEvenSum(obj[key]);
+      } else if (obj[key] % 2 === 0 && typeof obj[key] === "number"){
+          console.log(obj[key])
+          sum += obj[key];
+      }
+    }
+    return sum;
+}
+
+// console.log(nestedEvenSum(obj2));
