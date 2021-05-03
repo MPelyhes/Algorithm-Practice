@@ -599,3 +599,25 @@ const stringifyNumbers = (obj) => {
 }
 
 // console.log(stringifyNumbers(obj2));
+
+//collectStrings
+//Write a recursive function that accepts and object and returns an array of all the values in the object that have a typeof string
+
+const collectStrings = (obj) => {
+  let strArr = [];
+
+  const stringCollecter = (obj) =>{
+    for(let key in obj){
+      if(typeof obj[key] === "object"){
+        stringCollecter(obj[key]);
+      } else if(typeof obj[key] === "string"){
+        strArr.push(obj[key]);
+      }
+    }
+    return strArr;
+  }
+
+  return stringCollecter(obj);
+}
+
+// console.log(collectStrings(obj2));
