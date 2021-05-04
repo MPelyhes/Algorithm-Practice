@@ -635,3 +635,34 @@ const linearSearch = (arr, val) => {
   return -1;
 }
 
+//binary search
+//write a function that accepts a sorted array and a value and returns the index of the value if it exists. 
+
+const binarySearch = (arr, val) => {
+  let left = 0;
+  let right = arr.length - 1;
+
+  while(left < right){
+    let middle = Math.floor((left + right) / 2);
+
+    if(val === arr[right]){
+      return right;
+    } else if(val === arr[left]){
+      return left;
+    }
+
+    if(arr[middle] === val){
+      return middle;
+    } else if (arr[middle] > val){
+      right = middle;
+    } else if(arr[middle] < val){
+      left = middle;
+    }
+
+    if(right === (left + 2)){
+      return -1
+    }
+  }
+}
+
+// console.log(binarySearch([10, 12, 13, 14, 15, 16, 17, 18, 20], 19));
