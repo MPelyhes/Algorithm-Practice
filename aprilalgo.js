@@ -642,27 +642,18 @@ const binarySearch = (arr, val) => {
   let left = 0;
   let right = arr.length - 1;
 
-  while(left < right){
+  while(left <= right){
     let middle = Math.floor((left + right) / 2);
-
-    if(val === arr[right]){
-      return right;
-    } else if(val === arr[left]){
-      return left;
-    }
 
     if(arr[middle] === val){
       return middle;
     } else if (arr[middle] > val){
-      right = middle;
+      right = middle -1;
     } else if(arr[middle] < val){
-      left = middle;
-    }
-
-    if(right === (left + 2)){
-      return -1
+      left = middle + 1;
     }
   }
+  return -1;
 }
 
-// console.log(binarySearch([10, 12, 13, 14, 15, 16, 17, 18, 20], 19));
+console.log(binarySearch([10, 12, 13, 14, 15, 16, 17, 18, 20], 20));
