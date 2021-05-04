@@ -656,4 +656,22 @@ const binarySearch = (arr, val) => {
   return -1;
 }
 
-console.log(binarySearch([10, 12, 13, 14, 15, 16, 17, 18, 20], 20));
+// console.log(binarySearch([10, 12, 13, 14, 15, 16, 17, 18, 20], 20));
+
+//naive stringSearch
+//Given two strings, count how many times the second string occurs within the first string
+
+const stringSearch = (str1, str2) => {
+  let count = 0;
+
+  for(let i = 0; i < str1.length; i++){
+    for(let j =0; j <str2.length; j++){
+      if(str1[i+j] !== str2[j]) break;
+      if(j === str2.length -1) count++;
+    }
+  }
+
+  return count;
+};
+
+console.log(stringSearch("I love love lol", "lo"));
