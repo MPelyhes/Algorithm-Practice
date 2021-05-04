@@ -674,4 +674,22 @@ const stringSearch = (str1, str2) => {
   return count;
 };
 
-console.log(stringSearch("I love love lol", "lo"));
+// console.log(stringSearch("I love love lol", "lo"));
+
+//bubbleSort 
+//Give an array, return the sorted array using the bubble sort method
+
+const bubbleSort = (arr) => {
+  for(let i = arr.length; i > 0; i--){
+    for(let j = 0; j < i -1; j++){
+      if(arr[j] > arr[j + 1]){
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}
+
+// console.log(bubbleSort([1,4,3,6,2,7,78,62,5,10,12]));
