@@ -710,9 +710,27 @@ const selectionSort = (arr) => {
       let temp = arr[i];
       arr[i] = arr[min];
       arr[min] = temp;
-    } else break;
+    }
   }
   return arr;
 }
 
-console.log(selectionSort([8, 1, 2, 3, 4, 5, 6, 7]))
+// console.log(selectionSort([1, 8, 3, 4, 5, 6, 7]))
+
+const insertionSort = (arr) => {
+  for(let i = 1; i < arr.length; i++){
+    if(arr[i] < arr[i - 1]){
+      for(let j =0; j < i; j++){
+        console.log(i, j)
+        if(arr[i] < arr[j]){
+          let temp = arr[j];
+          arr[j] = arr[i];
+          arr[i] = temp;
+        }
+      }
+    }
+  }
+  return arr;
+}
+
+console.log(insertionSort([1,4,3,6,2,7,78,62,5,10,12]));
