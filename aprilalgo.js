@@ -697,3 +697,22 @@ const bubbleSort = (arr) => {
 
 // console.log(bubbleSort([1,4,3,6,2,7,78,62,5,10,12]));
 // console.log(bubbleSort([8, 1, 2, 3, 4, 5, 6, 7]))
+
+const selectionSort = (arr) => {
+  for(let i = 0; i < arr.length; i++){
+    let min = i;
+    for(let j = i + 1; j < arr.length; j++){
+      if(arr[j] < arr[min]){
+        min = j;
+      }
+    }
+    if(min !== i){
+      let temp = arr[i];
+      arr[i] = arr[min];
+      arr[min] = temp;
+    } else break;
+  }
+  return arr;
+}
+
+console.log(selectionSort([8, 1, 2, 3, 4, 5, 6, 7]))
