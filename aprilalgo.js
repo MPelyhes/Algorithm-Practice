@@ -733,4 +733,28 @@ const insertionSort = (arr) => {
   return arr;
 }
 
-console.log(insertionSort([1,4,3,6,2,7,78,62,5,10,12]));
+// console.log(insertionSort([1,4,3,6,2,7,78,62,5,10,12, 97, 2.5, 89, 14, 6]));
+
+const mergeArrays = (arr1, arr2) => {
+  let first = 0;
+  let second = 0;
+  let result = [];
+
+  while(first < arr1.length && second < arr2.length){
+    if(arr1[first] < arr2[second]){
+      result.push(arr1[first]);
+      first++;
+      if(first === arr1.length){
+        return result.concat(arr2.slice(second));
+      }
+    } else{
+      result.push(arr2[second]);
+      second++
+      if(second === arr2.length){
+        return result.concat(arr1.slice(first));
+      }
+    }
+  }
+}
+
+console.log(mergeArrays([1,4,6,7,9], [2,3,5,8,10, 11, 12, 13]));
