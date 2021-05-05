@@ -734,14 +734,15 @@ const insertionSort = (arr) => {
 }
 
 // console.log(insertionSort([1,4,3,6,2,7,78,62,5,10,12, 97, 2.5, 89, 14, 6]));
-
+//mergeArrays
+//write a funcion that accepts two sorted arrays and merges them to create a new sorted array
 const mergeArrays = (arr1, arr2) => {
   let first = 0;
   let second = 0;
   let result = [];
 
   while(first < arr1.length && second < arr2.length){
-    if(arr1[first] < arr2[second]){
+    if(arr1[first] <= arr2[second]){
       result.push(arr1[first]);
       first++;
       if(first === arr1.length){
@@ -757,4 +758,16 @@ const mergeArrays = (arr1, arr2) => {
   }
 }
 
-console.log(mergeArrays([1,4,6,7,9], [2,3,5,8,10, 11, 12, 13]));
+// 
+
+//Merge Sort
+
+const mergeSort = (arr) => {
+  if(arr.length <= 1) return arr;
+  let mid = Math.floor(arr.length/2);
+  let left = mergeSort(arr.slice(0, mid));
+  let right = mergeSort(arr.slice(mid));
+  return mergeArrays(left, right);
+}
+
+// console.log(mergeSort([12, 13, 5, 1, 190, 6, 42, 18]));
