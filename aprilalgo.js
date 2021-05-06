@@ -772,6 +772,12 @@ const mergeSort = (arr) => {
 
 // console.log(mergeSort([12, 13, 5, 1, 190, 6, 42, 18]));
 
+// Helper swap function for swapping two array values. Meant to be used inside a larger function that needs to swap to array value
+const swap = (arr, i, j) => {
+  let temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
+}
 
 //pivot helper function to be used in a quick sort algorithm
 const pivotHelper = (arr, start, end = arr.length -1) => {
@@ -781,16 +787,12 @@ const pivotHelper = (arr, start, end = arr.length -1) => {
   for(let i = 1; i <= end; i++){
     if(arr[start] > arr[i]){
       pivot++;
-      let temp = arr[i];
-      arr[i] = arr[pivot];
-      arr[pivot] = temp;
+      swap(arr, i, pivot);
     }
   }
-  let temp2 = arr[start];
-  arr[start] = arr[pivot];
-  arr[pivot] = temp2;
+  swap(arr, start, pivot);
 
-  return (pivot, arr);
+  return arr;
 }
 
 console.log(pivotHelper([8, 3, 5, 6, 1, 10, 29, 12], 0, 8));
