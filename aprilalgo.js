@@ -838,13 +838,11 @@ const digitCount = (num) => {
 //mostDigits - returns the highest number of digits for a number in a given array
 
 const mostDigits = (arr) => {
-  let max = 0;
+  let maxDig = 0;
   for(let num of arr){
-    if(digitCount(num) > max){
-      max = digitCount(num);
-    }
+    maxDig = Math.max(maxDig, digitCount(num))
   }
-  return max;
+  return maxDig;
 }
 
-// console.log(mostDigits([1, 23, 567, 2345, 2, 33, 234, 1234, 123]));
+console.log(mostDigits([1, 23, 567, 23456, 2, 33, 234, 1234, 123]));
