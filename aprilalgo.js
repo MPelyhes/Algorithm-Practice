@@ -826,3 +826,25 @@ const getDigit = (num, value) =>{
 }
 
 // console.log(getDigit(145, 1));
+
+//digitCount - returns the number of digits in a given number
+
+const digitCount = (num) => {
+  return String(num).length;
+}
+
+// 
+
+//mostDigits - returns the highest number of digits for a number in a given array
+
+const mostDigits = (arr) => {
+  let max = 0;
+  for(let num of arr){
+    if(digitCount(num) > max){
+      max = digitCount(num);
+    }
+  }
+  return max;
+}
+
+// console.log(mostDigits([1, 23, 567, 2345, 2, 33, 234, 1234, 123]));
