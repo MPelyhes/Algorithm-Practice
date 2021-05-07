@@ -812,3 +812,17 @@ const quickSort = (arr, left = 0, right = arr.length-1) => {
 }
 
 // console.log(quickSort([8, 3, 5, 6, 1, 10, 29, 12]));
+
+//Radix Sort 
+
+//Necessary helper functions
+
+//getDigit - returns the digit of a number at a given place value
+
+const getDigit = (num, value) =>{
+  let numStr = String(num);
+  let valIndex = numStr.length - value;
+  return Number(numStr[valIndex]);
+}
+
+// console.log(getDigit(145, 1));
