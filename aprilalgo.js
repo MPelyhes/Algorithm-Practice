@@ -784,7 +784,7 @@ const pivotHelper = (arr, start, end = arr.length -1) => {
   if(start === end) return arr;
 
   let pivot = start;
-  for(let i = 1; i <= end; i++){
+  for(let i = start + 1; i <= end; i++){
     if(arr[start] > arr[i]){
       pivot++;
       swap(arr, i, pivot);
@@ -792,7 +792,23 @@ const pivotHelper = (arr, start, end = arr.length -1) => {
   }
   swap(arr, start, pivot);
 
+  return pivot++;
+}
+
+// console.log(pivotHelper([8, 3, 5, 6, 1, 10, 29, 12], 0, 8));
+
+//Quick sort!
+
+const quickSort = (arr, left = 0, right = arr.length-1) => {
+  if(left < right) {
+    console.log("here")
+    let pivotIndex = pivotHelper(arr, left, right);
+    //left side
+    quickSort(arr, left, pivotIndex-1);
+    //right side
+    quickSort(arr, pivotIndex+1, right);
+  }
   return arr;
 }
 
-console.log(pivotHelper([8, 3, 5, 6, 1, 10, 29, 12], 0, 8));
+// console.log(quickSort([8, 3, 5, 6, 1, 10, 29, 12]));
