@@ -845,4 +845,22 @@ const mostDigits = (arr) => {
   return maxDig;
 }
 
-console.log(mostDigits([1, 23, 567, 23456, 2, 33, 234, 1234, 123]));
+// 
+
+const radixSort = (arr) => {
+  const maxDig = mostDigits(arr);
+  let newArr = arr;
+
+  for(let k = 1; k <= maxDig; k++){
+    let buckets = Array.from({length: 10}, () => [])
+    for(let i = 0; i < newArr.length; i++){
+      let digit = getDigit(newArr[i], k) || 0;
+      buckets[digit].push(newArr[i]);
+    }
+    newArr = flatten(buckets);
+  }
+
+  return newArr;
+}
+
+console.log(radixSort([1, 54, 2, 234, 542, 4533, 23, 4, 454]))
