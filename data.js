@@ -45,6 +45,17 @@ class SinglyLinkedList{
     }
     return currentNode;
   }
+  shift(){
+    if(!this.head) return undefined;
+    let currentHead = this.head;
+    this.head = currentHead.next;
+    currentHead.next = null;
+    this.length--;
+    if(this.length === 0){
+      this.tail = null;
+    }
+    return currentHead;
+  }
 }
 
 let list = new SinglyLinkedList();
@@ -52,6 +63,4 @@ list.push("hello");
 list.push("goodbye");
 list.push("I don't know why you say hello");
 list.push("I say goodbye");
-console.log(list)
-list.pop();
-console.log(list)
+console.log(list.shift());
