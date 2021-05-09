@@ -16,17 +16,35 @@ class SinglyLinkedList{
     this.length = 0;
   }
   push(val){
-    if(this.length === 0){
-      let nodeVal = new Node(val);
+    let nodeVal = new Node(val);
+    if(!this.head){
       this.head = nodeVal;
       this.tail = nodeVal;
     } else {
-        let nodeVal = new Node(val);
         this.tail.next = nodeVal;
         this.tail = nodeVal;
+    }
+    this.length += 1;
+    return this;
   }
-  this.length += 1;
-}
+  pop(){
+    if(!this.head) return undefined;
+    let currentNode = this.head;
+    let newTail = currentNode;
+
+    while(currentNode.next){
+      newTail = currentNode;
+      currentNode = currentNode.next;
+    }
+    this.tail = newTail;
+    this.tail.next = null;
+    this.length--;
+    if(this.length === 0){
+      this.head = null;
+      this.tail = null;
+    }
+    return currentNode;
+  }
 }
 
 let list = new SinglyLinkedList();
@@ -34,4 +52,6 @@ list.push("hello");
 list.push("goodbye");
 list.push("I don't know why you say hello");
 list.push("I say goodbye");
-console.log(list);
+console.log(list)
+list.pop();
+console.log(list)
