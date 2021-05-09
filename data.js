@@ -56,6 +56,28 @@ class SinglyLinkedList{
     }
     return currentHead;
   }
+  unshift(val){
+    let newNode = new Node(val);
+    if(!this.head){
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
+  get(index){
+    if(index < 0 || index >= this.length) return null;
+    let counter = 0;
+    let currentNode = this.head;
+    while(counter !== index){
+      currentNode = currentNode.next;
+      counter++;
+    }
+    return currentNode;
+  }
 }
 
 let list = new SinglyLinkedList();
@@ -63,4 +85,5 @@ list.push("hello");
 list.push("goodbye");
 list.push("I don't know why you say hello");
 list.push("I say goodbye");
-console.log(list.shift());
+// list.unshift("Hold up!")
+console.log(list.get(3));
