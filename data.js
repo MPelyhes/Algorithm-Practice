@@ -78,6 +78,12 @@ class SinglyLinkedList{
     }
     return currentNode;
   }
+  set(index, val){
+    let node = this.get(index);
+    if(!node) return false;
+    node.val = val;
+    return true;
+  }
 }
 
 let list = new SinglyLinkedList();
@@ -86,4 +92,5 @@ list.push("goodbye");
 list.push("I don't know why you say hello");
 list.push("I say goodbye");
 // list.unshift("Hold up!")
-console.log(list.get(3));
+// console.log(list.get(3));
+console.log(list.set(3, "Because, it is nice!"))
