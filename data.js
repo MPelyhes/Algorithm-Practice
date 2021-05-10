@@ -101,7 +101,7 @@ class SinglyLinkedList{
     return true;
   }
   remove(index){
-    if(index < 0) return undefined;
+    if(index < 0 || index >= this.length) return undefined;
     if(index === this.length - 1) return this.pop();
     if(index === 0) return this.shift();
     let findNode = this.get(index - 1);
@@ -109,6 +109,21 @@ class SinglyLinkedList{
     findNode.next = deletedNode.next;
     this.length--;
     return deletedNode;
+  }
+  reverse(){
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    let next = null;
+    let prev = null;
+
+    for(let i = 0; i < this.length; i++){
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
   }
 }
 
@@ -119,5 +134,5 @@ list.push("I don't know why you say hello");
 list.push("I say goodbye");
 // list.unshift("Hold up!")
 // console.log(list.get(3));
-console.log(list.remove(3))
-console.log(list);
+
+console.log(list.reverse());
