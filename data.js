@@ -84,6 +84,32 @@ class SinglyLinkedList{
     node.val = val;
     return true;
   }
+  insert(index, val){
+    if(index  < 0 || index > this.length) return false;
+    if(index === this.length){
+      this.push(val)
+    } else if(index === 0){
+    this.unshift(val);
+    } else {
+      let newNode = new Node(val);
+      let findNode = this.get(index - 1);
+      let oldNext = findNode.next;
+      findNode.next = newNode;
+      newNode.next = oldNext;
+      this.length++;
+    }
+    return true;
+  }
+  remove(index){
+    if(index < 0) return undefined;
+    if(index === this.length - 1) return this.pop();
+    if(index === 0) return this.shift();
+    let findNode = this.get(index - 1);
+    let deletedNode = findNode.next;
+    findNode.next = deletedNode.next;
+    this.length--;
+    return deletedNode;
+  }
 }
 
 let list = new SinglyLinkedList();
@@ -93,4 +119,5 @@ list.push("I don't know why you say hello");
 list.push("I say goodbye");
 // list.unshift("Hold up!")
 // console.log(list.get(3));
-console.log(list.set(3, "Because, it is nice!"))
+console.log(list.remove(3))
+console.log(list);
