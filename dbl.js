@@ -128,6 +128,18 @@ class DoublyLinkedList {
     this.length--;
     return foundNode;
   }
+  reverse(){
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    for(let i = 0; i < this.length; i++){
+      let previous = node.prev;
+      node.prev = node.next;
+      node.next = previous;
+      node = node.prev;
+    }
+    return this;
+  }
 }
 
 let list = new DoublyLinkedList();
@@ -135,5 +147,5 @@ let list = new DoublyLinkedList();
 list.push("Hi, again.");
 list.push("Is it me you're looking for?");
 list.push("Well, here I am!");
-console.log(list.remove(0));
-console.log(list);
+console.log(list.reverse());
+// console.log(list);
