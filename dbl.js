@@ -55,6 +55,44 @@ class DoublyLinkedList {
     this.length--;
     return oldHead;
   }
+  unshift(val){
+    let newNode = new Node(val);
+    if(!this.head){
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.head.prev = newNode;
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
+  get(index){
+    if(index < 0 || index >= this.length) return null;
+    let midpoint = Math.floor(this.length/2);
+    if(index <= midpoint){
+      let counter = 0;
+      let currentNode = this.head;
+      while(counter <= index){
+        if(counter === index){
+          return currentNode;
+        }
+        currentNode = currentNode.next;
+        counter++;
+      }
+    } else {
+      let counter = this.length - 1;
+      let currentNode = this.tail; 
+      while(counter > midpoint){
+        if(counter === index){
+          return currentNode;
+        }
+        currentNode = currentNode.prev;
+        counter--;
+      }
+    }
+  }
 }
 
 let list = new DoublyLinkedList();
@@ -62,5 +100,5 @@ let list = new DoublyLinkedList();
 list.push("Hi, again.");
 list.push("Is it me you're looking for?");
 list.push("Well, here I am!");
-console.log(list.shift());
-console.log(list);
+console.log(list.get(9));
+// console.log(list);
