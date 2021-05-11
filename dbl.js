@@ -96,6 +96,23 @@ class DoublyLinkedList {
     }
     return false;
   }
+  insert(index, value){
+    if(index < 0 || index >= this.length) return false;
+    if(index === 0){
+      this.unshift(value);
+    } else if(index === this.length){
+      this.push(value);
+    } else {
+      let newNode = new Node(value);
+      let foundNode = this.get(index - 1);
+      newNode.next = foundNode.next;
+      newNode.prev = foundNode;
+      foundNode.next.prev = newNode;
+      foundNode.next = newNode;
+    }
+    this.length++;
+    return true
+  }
 }
 
 let list = new DoublyLinkedList();
@@ -103,5 +120,5 @@ let list = new DoublyLinkedList();
 list.push("Hi, again.");
 list.push("Is it me you're looking for?");
 list.push("Well, here I am!");
-console.log(list.set(98, "shut it"));
+console.log(list.insert(9, "shut it"));
 console.log(list);
