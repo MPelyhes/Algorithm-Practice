@@ -70,8 +70,7 @@ class DoublyLinkedList {
   }
   get(index){
     if(index < 0 || index >= this.length) return null;
-    let midpoint = Math.floor(this.length/2);
-    if(index <= midpoint){
+    if(index <= Math.floor(this.length/2)){
       let counter = 0;
       let currentNode = this.head;
       while(counter !== index){
@@ -89,6 +88,14 @@ class DoublyLinkedList {
       return currentNode;
     }
   }
+  set(index, value){
+    let updated = this.get(index);
+    if(updated !== null){
+      updated.val = value;
+      return true;
+    }
+    return false;
+  }
 }
 
 let list = new DoublyLinkedList();
@@ -96,5 +103,5 @@ let list = new DoublyLinkedList();
 list.push("Hi, again.");
 list.push("Is it me you're looking for?");
 list.push("Well, here I am!");
-console.log(list.get(2));
-// console.log(list);
+console.log(list.set(98, "shut it"));
+console.log(list);
