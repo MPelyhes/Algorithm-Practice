@@ -88,6 +88,20 @@ class BinarySearchTree {
 
     return visited;
   }
+  DFSPost(){
+    let visited = [];
+    let currentNode = this.root;
+
+    let dfsPostHelper = function(node){
+      if(node.left) dfsPostHelper(node.left);
+      if(node.right) dfsPostHelper(node.right);
+      visited.push(node.value);
+    }
+
+    dfsPostHelper(currentNode);
+
+    return visited
+  }
 }
 
 let bst = new BinarySearchTree();
@@ -99,5 +113,5 @@ bst.insert(11);
 bst.insert(34)
 bst.insert(1);
 bst.insert(3);
-console.log(bst.DFSPre());
+console.log(bst.DFSPost());
 // console.log(bst);
