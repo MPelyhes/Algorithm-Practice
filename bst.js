@@ -78,13 +78,13 @@ class BinarySearchTree {
     let visited = [];
     let currentNode = this.root;
 
-    let dfsHelper = function(node){
+    let traverse = function(node){
       visited.push(node.value);
-      if(node.left) dfsHelper(node.left);
-      if(node.right) dfsHelper(node.right);
+      if(node.left) traverse(node.left);
+      if(node.right) traverse(node.right);
     }
 
-    dfsHelper(currentNode);
+    traverse(currentNode);
 
     return visited;
   }
@@ -92,15 +92,29 @@ class BinarySearchTree {
     let visited = [];
     let currentNode = this.root;
 
-    let dfsPostHelper = function(node){
-      if(node.left) dfsPostHelper(node.left);
-      if(node.right) dfsPostHelper(node.right);
+    let traverse = function(node){
+      if(node.left) traverse(node.left);
+      if(node.right) traverse(node.right);
       visited.push(node.value);
     }
 
-    dfsPostHelper(currentNode);
+    traverse(currentNode);
 
     return visited
+  }
+  DFSInOrder(){
+    let visited = [];
+    let currentNode = this.root;
+
+    let traverse = function(node){
+      if(node.left) traverse(node.left);
+      visited.push(node.value);
+      if(node.right) traverse(node.right);
+    }
+
+    traverse(currentNode);
+
+    return visited;
   }
 }
 
@@ -113,5 +127,5 @@ bst.insert(11);
 bst.insert(34)
 bst.insert(1);
 bst.insert(3);
-console.log(bst.DFSPost());
+console.log(bst.DFSInOrder());
 // console.log(bst);
