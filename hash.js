@@ -45,4 +45,27 @@ class HashTable {
     }
     return undefined;
   }
+  keys(){
+    let keys = [];
+    for(let i = 0; i < this.keyMap.length; i++){
+      if(this.keyMap[i]){
+        for(let el of this.keyMap[i]){
+          keys.push(el[0])
+        }
+      }
+    }
+    return keys;
+  }
+  values(){
+    let values = [];
+    for(let i = 0; i < this.keyMap.length; i++){
+      if(this.keyMap[i]){
+        for(let el of this.keyMap[i]){
+          if(!values.includes(el[1]))
+          values.push(el[1])
+        }
+      }
+    }
+    return values;
+  }
 } 
