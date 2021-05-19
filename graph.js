@@ -19,14 +19,43 @@ class Graph {
     }
     delete this.adjacencyList[vertex];
   }
+  DFSRecursive(node){
+    let result = [];
+    let visited = {};
+    let list = this.adjacencyList;
+
+    const DFSHelper = function(vertex){
+      if(!list[vertex].length) return;
+      visited[vertex] = true;
+      result.push(vertex);
+      for(let value of list[vertex]){
+        if(!visited[value]){
+          DFSHelper(value);
+        }
+      }
+    }
+
+    DFSHelper(node);
+    return result;
+  }
 }
 
 const graph = new Graph();
-graph.addVertex("Hello");
-graph.addVertex("Goodbye");
-graph.addVertex("HastaLaVista");
-graph.addEdge("Hello", "Goodbye");
-graph.addEdge("Hello", "HastaLaVista");
+graph.addVertex("A");
+graph.addVertex("B");
+graph.addVertex("C");
+graph.addVertex("D");
+graph.addVertex("E");
+graph.addVertex("F");
+
+graph.addEdge("A", "B");
+graph.addEdge("A", "C");
+graph.addEdge("B", "D");
+graph.addEdge("C", "E");
+graph.addEdge("D", "E");
+graph.addEdge("D", "F");
+graph.addEdge("E", "F");
+
 console.log(graph)
-graph.removeVertex("Hello");
-console.log(graph)
+
+console.log(graph.DFSRecursive("A"));
