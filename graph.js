@@ -44,7 +44,7 @@ class Graph {
     let stack = [];
     stack.push(start);
     visited[start] = true;
-    
+
     while(stack.length){
       console.log("here");
       let currentVertex = stack.pop();
@@ -54,6 +54,25 @@ class Graph {
         if(!visited[neighbor]){
           visited[neighbor] = true;
           stack.push(neighbor);
+        }
+      }
+    }
+
+    return result;
+  }
+  BFS(start){
+    let queue = [start];
+    let visited = {};
+    let result = [];
+    visited[start] = true;
+
+    while(queue.length){
+      let currentVertex = queue.shift();
+      result.push(currentVertex);
+      for(let neighbor of this.adjacencyList[currentVertex]){
+        if(!visited[neighbor]){
+          visited[neighbor] = true;
+          queue.push(neighbor);
         }
       }
     }
@@ -80,4 +99,4 @@ graph.addEdge("E", "F");
 
 console.log(graph)
 
-console.log(graph.DFSIterative("A"));
+console.log(graph.BFS("A"));
