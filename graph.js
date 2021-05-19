@@ -43,13 +43,16 @@ class Graph {
     let visited = {};
     let stack = [];
     stack.push(start);
-
+    visited[start] = true;
+    
     while(stack.length){
+      console.log("here");
       let currentVertex = stack.pop();
-      if(!visited[currentVertex]){
-        visited[currentVertex] = true;
-        result.push(currentVertex);
-        for(let neighbor of this.adjacencyList[currentVertex]){
+      result.push(currentVertex);
+
+      for(let neighbor of this.adjacencyList[currentVertex]){
+        if(!visited[neighbor]){
+          visited[neighbor] = true;
           stack.push(neighbor);
         }
       }
