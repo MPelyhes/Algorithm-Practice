@@ -19,13 +19,13 @@ class Graph {
     }
     delete this.adjacencyList[vertex];
   }
-  DFSRecursive(node){
+  DFSRecursive(start){
     let result = [];
     let visited = {};
     let list = this.adjacencyList;
 
-    const DFSHelper = function(vertex){
-      if(!list[vertex].length) return;
+    function DFSHelper(vertex){
+      if(!vertex) return;
       visited[vertex] = true;
       result.push(vertex);
       for(let value of list[vertex]){
@@ -35,7 +35,26 @@ class Graph {
       }
     }
 
-    DFSHelper(node);
+    DFSHelper(start);
+    return result;
+  }
+  DFSIterative(start){
+    let result = [];
+    let visited = {};
+    let stack = [];
+    stack.push(start);
+
+    while(stack.length){
+      let currentVertex = stack.pop();
+      if(!visited[currentVertex]){
+        visited[currentVertex] = true;
+        result.push(currentVertex);
+        for(let neighbor of this.adjacencyList[currentVertex]){
+          stack.push(neighbor);
+        }
+      }
+    }
+
     return result;
   }
 }
@@ -58,4 +77,4 @@ graph.addEdge("E", "F");
 
 console.log(graph)
 
-console.log(graph.DFSRecursive("A"));
+console.log(graph.DFSIterative("A"));
