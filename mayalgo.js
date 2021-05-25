@@ -3,10 +3,11 @@
 // Return the running sum of nums.
 
 let runningSum = (arr) => {
+  let newArr = [arr[0]]
   for(let i = 1; i < arr.length; i++){
-    arr[i] = arr[i - 1] + arr[i];
-  }
-  return arr;
+  newArr.push(newArr[i - 1] + arr[i]);
+}
+return newArr;
 }
 
 console.log(runningSum([3,1,2,10,1]));
