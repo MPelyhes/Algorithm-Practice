@@ -2,7 +2,7 @@
 
 // Return the running sum of nums.
 
-let runningSum = (arr) => {
+const runningSum = (arr) => {
   let newArr = [arr[0]]
   for(let i = 1; i < arr.length; i++){
   newArr.push(newArr[i - 1] + arr[i]);
@@ -10,4 +10,16 @@ let runningSum = (arr) => {
 return newArr;
 }
 
-console.log(runningSum([3,1,2,10,1]));
+// console.log(runningSum([3,1,2,10,1]));
+
+const ipDefang = (str) => {
+  let ipArr = str.split('');
+  for(let i =0; i < ipArr.length; i++){
+    if(ipArr[i] === '.') {
+      ipArr[i] = '[.]'
+    }
+  }
+  return ipArr.join('');
+}
+
+// console.log(ipDefang("1.1.1.1"))
