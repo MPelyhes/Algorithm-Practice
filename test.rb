@@ -1,0 +1,2 @@
+myTest = "Testing"
+p myTest
