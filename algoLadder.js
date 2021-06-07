@@ -82,6 +82,7 @@ const getTheMax = (arr) => {
 
 // console.log(getTheMax([5, 17, -4, 20, 12]))
 
+
 //In the first solution we use the Math.max method and spread the give array into it to find the max
 //In the second solution we use a for loop to determine the greatest number
 

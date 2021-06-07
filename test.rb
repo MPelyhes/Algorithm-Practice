@@ -1,2 +1,0 @@
-myTest = "Testing"
-p myTest
